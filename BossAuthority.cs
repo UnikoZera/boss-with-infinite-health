@@ -16,7 +16,7 @@ internal static class BossAuthority
         get
         {
             var service = FindNetService();
-            return service is null || service.Type.ToString() is "Singleplayer" or "Host";
+            return service is null || service.Type.ToString() is "None" or "Singleplayer" or "Host";
         }
     }
 

@@ -53,7 +53,7 @@ internal static class BossCombatState
             if (!CanChange) return false;
             _enabled = value;
             if (!value && _combat is not null &&
-                _combat.Enemies.Any(e => IsBossCreature(e) && e.CurrentHp <= 0 && !e.IsDead))
+                _combat.Enemies.Any(e => IsProtectedEnemy(e) && e.CurrentHp <= 0))
                 _protectedUntilBoundary = true;
             BossAuthority.Broadcast(value);
         }
@@ -65,7 +65,7 @@ internal static class BossCombatState
     {
         lock (Sync)
         {
-            if (!IsBossCombat || !IsBossCreature(creature)) return false;
+            if (!IsBossCombat || !IsProtectedEnemy(creature)) return false;
             if (_enabled)
             {
                 _protectedUntilBoundary = true;
@@ -77,35 +77,95 @@ internal static class BossCombatState
         }
     }
 
-    public static bool ShouldStopEnding(CombatState combat)
+    public static bool ShouldExposeAsAlive(Creature creature)
+    {
+        lock (Sync)
+        {
+            return IsSurvivalActiveForBoss(creature);
+        }
+    }
+
+    public static bool IsDeadForCombatResolution(Creature creature) =>
+        creature.CurrentHp <= 0 && !ShouldExposeAsAlive(creature);
+
+    public static bool ShouldAllowNegativeHp(Creature creature)
+    {
+        lock (Sync)
+        {
+            return IsSurvivalActiveForBoss(creature);
+        }
+    }
+
+    public static bool ShouldKeepCombatAlive(ICombatState combat)
+    {
+        lock (Sync)
+        {
+            if (!ReferenceEquals(_combat, combat) || !_bossCombat)
+                return false;
+            if (_pendingDeath) return true;
+            return (_enabled || _protectedUntilBoundary) &&
+                combat.Enemies.Any(e => IsProtectedEnemy(e) && e.CurrentHp <= 0);
+        }
+    }
+
+    public static bool ShouldStopEnding(ICombatState combat)
     {
         lock (Sync)
         {
             if (!ReferenceEquals(_combat, combat) || !_bossCombat) return false;
-            if (_protectedUntilBoundary && combat.Enemies.Any(e => IsBossCreature(e) && e.CurrentHp <= 0 && !e.IsDead))
+            // Keep the combat open while the normal death pipeline is removing
+            // the whole dead-enemy batch. The boundary caller checks victory
+            // immediately after this task completes.
+            if (_pendingDeath) return true;
+            if (_protectedUntilBoundary && combat.Enemies.Any(e => IsProtectedEnemy(e) && e.CurrentHp <= 0))
                 return true;
             if (!_enabled) return false;
-            return combat.Enemies.Any(e => IsBossCreature(e) && e.CurrentHp <= 0 && !e.IsDead);
+            return combat.Enemies.Any(e => IsProtectedEnemy(e) && e.CurrentHp <= 0);
         }
     }
 
-    public static void EvaluateAtEnemyTurnBoundary()
+    public static async Task EvaluateAtEnemyTurnBoundaryAsync()
     {
+        Creature[] deadEnemies;
+        CombatState combat;
         lock (Sync)
         {
             if (!_bossCombat || _combat is null || _enabled || _pendingDeath) return;
-            var deadBoss = _combat.Enemies.FirstOrDefault(e => IsBossCreature(e) && e.CurrentHp <= 0 && !e.IsDead);
-            if (deadBoss is null) return;
+            combat = _combat;
+            deadEnemies = combat.Enemies
+                .Where(e => IsProtectedEnemy(e) && e.CurrentHp <= 0 && IsSurvivalActiveForBoss(e))
+                .OrderBy(e => e.IsPrimaryEnemy)
+                .ToArray();
+            if (deadEnemies.Length == 0) return;
             _pendingDeath = true;
             _protectedUntilBoundary = false;
-            // ShouldDie was intentionally held during the player turn. Release
-            // that hold by entering the normal death pipeline at the boundary.
-            MegaCrit.Sts2.Core.Commands.CreatureCmd.Kill(deadBoss, false);
+        }
+
+        try
+        {
+            // Run only after AfterSideTurnStart finishes. StartTurn has already
+            // called AfterTurnStart and AfterBlockCleared for its participant
+            // snapshot, so removing enemies here cannot leave a detached
+            // creature in that setup loop.
+            await MegaCrit.Sts2.Core.Commands.CreatureCmd.Kill(deadEnemies, false);
+        }
+        finally
+        {
+            lock (Sync)
+            {
+                if (ReferenceEquals(_combat, combat))
+                    _pendingDeath = false;
+            }
         }
     }
 
-    public static bool IsBossCreature(Creature creature) =>
-        creature.IsMonster && creature.IsPrimaryEnemy;
+    public static bool IsProtectedEnemy(Creature creature) =>
+        creature.IsMonster && creature.Side == CombatSide.Enemy;
+
+    private static bool IsSurvivalActiveForBoss(Creature creature) =>
+        _bossCombat && _combat is not null && ReferenceEquals(creature.CombatState, _combat) &&
+        IsProtectedEnemy(creature) &&
+        (_enabled || _protectedUntilBoundary) && !_pendingDeath;
 
     private static bool IsBossEncounter(CombatState combat)
     {

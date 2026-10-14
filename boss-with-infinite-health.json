@@ -1,6 +1,6 @@
 {
-  "id": "BossSurvival",
-  "name": "Boss Survival Switch",
+  "id": "boss-with-infinite-health",
+  "name": "boss-with-infinite-health",
   "author": "Local Mod",
   "description": "Adds a host-controlled boss survival switch. Bosses can keep acting below zero HP.",
   "version": "0.1.0",

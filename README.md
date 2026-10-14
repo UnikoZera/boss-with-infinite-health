@@ -1,13 +1,14 @@
-# Boss Survival Switch
+# boss-with-infinite-health
 
 This repository contains a DLL mod for Slay the Spire 2 `v0.107.1`.
 
 ## Behavior
 
 - The button is visible only in encounters recognized as boss encounters.
-- It is off by default. While on, `Hook.ShouldDie` denies boss death and
-  `Hook.ShouldStopCombatFromEnding` keeps the combat alive when a boss is at or
-  below zero HP.
+- It is off by default. While on, `Hook.ShouldDie` denies boss death, target
+  selection and hit checks continue to allow the boss, and the health bar shows
+  its actual HP value, including negative values. The boss is exposed as alive to
+  combat win-state checks so the combat manager does not enter its ending state.
 - Turning it off does not resurrect or clamp HP. A boss already below zero is
   allowed to finish the current player-turn boundary, then vanilla death logic
   proceeds at the enemy-turn transition.
@@ -32,9 +33,9 @@ does not expose a public per-mod settings schema, so the file is used instead.
 ## Build/install
 
 ```powershell
-dotnet build -c Release
-Copy-Item .\bin\Release\BossSurvival.dll 'F:\Steam\steamapps\common\Slay the Spire 2\mods\BossSurvival\'
-Copy-Item .\BossSurvival.json 'F:\Steam\steamapps\common\Slay the Spire 2\mods\BossSurvival\'
+dotnet build .\boss-with-infinite-health.csproj -c Release
+Copy-Item .\bin\Release\boss-with-infinite-health.dll 'F:\Steam\steamapps\common\Slay the Spire 2\mods\boss-with-infinite-health\'
+Copy-Item .\boss-with-infinite-health.json 'F:\Steam\steamapps\common\Slay the Spire 2\mods\boss-with-infinite-health\'
 ```
 
 The game must have mod loading enabled. The host-only rule is enforced locally.

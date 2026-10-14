@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <AssemblyName>BossSurvival</AssemblyName>
+    <AssemblyName>boss-with-infinite-health</AssemblyName>
     <RootNamespace>BossSurvival</RootNamespace>
     <LangVersion>12.0</LangVersion>
     <Nullable>enable</Nullable>
