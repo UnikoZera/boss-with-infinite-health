@@ -12,6 +12,7 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BaseLib" HintPath="F:\Steam\steamapps\workshop\content\2868840\3737335127\BaseLib\BaseLib.dll" Private="false" />
     <Compile Remove="inspect/**" />
     <Compile Remove="inspect2/**" />
     <Compile Remove="tmpinspect/**" />

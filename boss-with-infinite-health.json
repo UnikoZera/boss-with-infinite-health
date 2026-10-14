@@ -8,5 +8,5 @@
   "has_dll": true,
   "has_pck": false,
   "affects_gameplay": true,
-  "dependencies": []
+  "dependencies": [{ "id": "BaseLib", "min_version": "3.4.7" }]
 }

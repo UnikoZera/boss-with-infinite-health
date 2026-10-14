@@ -10,6 +10,7 @@ internal static class BossToggleButton
     private static readonly HashSet<Button> Buttons = new();
     private static readonly Dictionary<Button, PanelContainer> Panels = new();
     private static readonly HashSet<CanvasLayer> Layers = new();
+    private static readonly Dictionary<Button, (Label State, Panel Track, Panel Thumb)> Indicators = new();
 
     public static void Attach(NCombatRoom room)
     {
@@ -25,7 +26,7 @@ internal static class BossToggleButton
         {
             Name = "BossSurvivalPanel",
             Position = new Vector2(34, 116),
-            CustomMinimumSize = new Vector2(300, 74),
+            CustomMinimumSize = new Vector2(324, 86),
             MouseFilter = Control.MouseFilterEnum.Ignore
         };
         panel.AddThemeStyleboxOverride("panel", MakePanelStyle());
@@ -34,8 +35,8 @@ internal static class BossToggleButton
         var button = new Button
         {
             Name = "BossSurvivalToggle",
-            Text = "BOSS SURVIVAL  |  OFF",
-            CustomMinimumSize = new Vector2(300, 74),
+            Text = "",
+            CustomMinimumSize = new Vector2(324, 86),
             MouseFilter = Control.MouseFilterEnum.Stop,
             FocusMode = Control.FocusModeEnum.All,
             MouseDefaultCursorShape = Control.CursorShape.PointingHand,
@@ -46,9 +47,9 @@ internal static class BossToggleButton
         button.AddThemeColorOverride("font_hover_color", new Color("#fff4cf"));
         button.AddThemeColorOverride("font_pressed_color", new Color("#ffffff"));
         button.AddThemeColorOverride("font_disabled_color", new Color("#8d8a83"));
-        button.AddThemeStyleboxOverride("normal", MakeButtonStyle("#252b31", "#626a70", 1));
-        button.AddThemeStyleboxOverride("hover", MakeButtonStyle("#35414a", "#d39b45", 2));
-        button.AddThemeStyleboxOverride("pressed", MakeButtonStyle("#1d382e", "#69b78a", 2));
+        button.AddThemeStyleboxOverride("normal", MakeButtonStyle("#18232e", "#4e6070", 1));
+        button.AddThemeStyleboxOverride("hover", MakeButtonStyle("#263746", "#f5d478", 2));
+        button.AddThemeStyleboxOverride("pressed", MakeButtonStyle("#152e2c", "#73dec0", 2));
         button.AddThemeStyleboxOverride("disabled", MakeButtonStyle("#202328", "#454a4f", 1));
         button.Pressed += () =>
         {
@@ -56,6 +57,19 @@ internal static class BossToggleButton
             BossCombatState.TrySetEnabled(!BossCombatState.Enabled);
         };
         panel.AddChild(button);
+        var title = new Label { Text = "BOSS 无限生命", Position = new Vector2(18, 12), MouseFilter = Control.MouseFilterEnum.Ignore };
+        title.AddThemeFontSizeOverride("font_size", 21);
+        title.AddThemeColorOverride("font_color", new Color("#f5e6c6"));
+        button.AddChild(title);
+        var state = new Label { Position = new Vector2(18, 45), MouseFilter = Control.MouseFilterEnum.Ignore };
+        state.AddThemeFontSizeOverride("font_size", 15);
+        button.AddChild(state);
+        var track = new Panel { Position = new Vector2(250, 27), Size = new Vector2(54, 30), MouseFilter = Control.MouseFilterEnum.Ignore };
+        button.AddChild(track);
+        var thumb = new Panel { Size = new Vector2(22, 22), MouseFilter = Control.MouseFilterEnum.Ignore };
+        thumb.AddThemeStyleboxOverride("panel", MakeIndicatorStyle("#f5eedc", "#f5eedc", 0));
+        track.AddChild(thumb);
+        Indicators[button] = (state, track, thumb);
         Layers.Add(layer);
         Buttons.Add(button);
         Panels[button] = panel;
@@ -71,6 +85,7 @@ internal static class BossToggleButton
             {
                 Buttons.Remove(button);
                 Panels.Remove(button);
+                Indicators.Remove(button);
                 continue;
             }
             Refresh(button);
@@ -89,9 +104,25 @@ internal static class BossToggleButton
         if (Panels.TryGetValue(button, out var panel) && GodotObject.IsInstanceValid(panel))
             panel.Visible = BossCombatState.IsBossCombat;
         button.Disabled = !BossCombatState.CanChange;
-        button.Text = BossCombatState.Enabled
-            ? "BOSS SURVIVAL  |  ON"
-            : "BOSS SURVIVAL  |  OFF";
+        button.TooltipText = BossCombatState.CanChange ? "点击切换。关闭后，负血敌人在回合交界死亡。" : "仅房主可操作";
+        if (Indicators.TryGetValue(button, out var indicator))
+        {
+            var enabled = BossCombatState.Enabled;
+            indicator.State.Text = (enabled ? "已开启 · 可持续打出负血" : "已关闭 · 正常死亡") + (BossCombatState.CanChange ? "" : " · 房主控制");
+            indicator.State.AddThemeColorOverride("font_color", new Color(enabled ? "#73dec0" : "#aab5c2"));
+            indicator.Track.AddThemeStyleboxOverride("panel", MakeIndicatorStyle(enabled ? "#247d68" : "#3a4856", enabled ? "#73dec0" : "#657787", 1));
+            indicator.Thumb.Position = new Vector2(enabled ? 28 : 4, 4);
+        }
+    }
+
+    private static StyleBoxFlat MakeIndicatorStyle(string background, string border, int borderWidth)
+    {
+        var style = MakeButtonStyle(background, border, borderWidth);
+        style.ContentMarginLeft = 0;
+        style.ContentMarginRight = 0;
+        style.ContentMarginTop = 0;
+        style.ContentMarginBottom = 0;
+        return style;
     }
 
     private static StyleBoxFlat MakePanelStyle() => new()
@@ -102,10 +133,10 @@ internal static class BossToggleButton
         BorderWidthRight = 2,
         BorderWidthBottom = 2,
         BorderColor = new Color("#8d6a3b"),
-        CornerRadiusTopLeft = 7,
-        CornerRadiusTopRight = 7,
-        CornerRadiusBottomLeft = 7,
-        CornerRadiusBottomRight = 7,
+        CornerRadiusTopLeft = 14,
+        CornerRadiusTopRight = 14,
+        CornerRadiusBottomLeft = 14,
+        CornerRadiusBottomRight = 14,
         ShadowColor = new Color(0, 0, 0, 0.45f),
         ShadowSize = 8
     };
@@ -118,10 +149,10 @@ internal static class BossToggleButton
         BorderWidthRight = borderWidth,
         BorderWidthBottom = borderWidth,
         BorderColor = new Color(border),
-        CornerRadiusTopLeft = 5,
-        CornerRadiusTopRight = 5,
-        CornerRadiusBottomLeft = 5,
-        CornerRadiusBottomRight = 5,
+        CornerRadiusTopLeft = 12,
+        CornerRadiusTopRight = 12,
+        CornerRadiusBottomLeft = 12,
+        CornerRadiusBottomRight = 12,
         ContentMarginLeft = 22,
         ContentMarginRight = 18
     };

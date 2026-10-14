@@ -13,6 +13,7 @@ public static class ModEntry
     public static void Initialize()
     {
         BossSurvivalConfig.Load();
+        BaseLib.Config.ModConfigRegistry.Register(ModId, new BossSettingsMenu());
         Log.Info($"[{ModId}] Applying combat patches for STS2 v0.107.1.");
         new Harmony(ModId).PatchAll(Assembly.GetExecutingAssembly());
         Log.Info($"[{ModId}] loaded for STS2 v0.107.1.");
