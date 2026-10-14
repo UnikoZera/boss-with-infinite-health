@@ -88,6 +88,9 @@ internal static class BossCombatState
     public static bool IsDeadForCombatResolution(Creature creature) =>
         creature.CurrentHp <= 0 && !ShouldExposeAsAlive(creature);
 
+    public static bool IsAliveForCombatResolution(Creature creature) =>
+        !IsDeadForCombatResolution(creature);
+
     public static bool ShouldAllowNegativeHp(Creature creature)
     {
         lock (Sync)

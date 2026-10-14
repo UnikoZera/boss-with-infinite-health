@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -102,6 +103,61 @@ internal static class BossPlayCardValidationHook
             }
             yield return instruction;
         }
+    }
+}
+
+// Monster attacks exit before reaching CreatureCmd.Damage when AttackCommand
+// sees a dead attacker, and multi-hit attacks also filter dead targets. Those
+// checks are in Execute's async state machine and must use the same protected
+// alive rules as the damage resolver.
+[HarmonyPatch]
+internal static class BossAttackExecutionHook
+{
+    private static MethodBase TargetMethod()
+    {
+        var execute = AccessTools.Method(typeof(AttackCommand), nameof(AttackCommand.Execute)) ??
+            throw new MissingMethodException(typeof(AttackCommand).FullName, nameof(AttackCommand.Execute));
+        var stateMachine = execute.GetCustomAttribute<AsyncStateMachineAttribute>()?.StateMachineType;
+        var moveNext = stateMachine?.GetMethod("MoveNext", BindingFlags.Instance | BindingFlags.NonPublic);
+        if (moveNext is null)
+            throw new MissingMethodException(stateMachine?.FullName ?? execute.ToString(), "MoveNext");
+        Log.Info($"[{ModEntry.ModId}] targeting {moveNext.DeclaringType?.FullName}.MoveNext for enemy attack validation.");
+        return moveNext;
+    }
+
+    private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+    {
+        var isDeadGetter = AccessTools.PropertyGetter(typeof(Creature), nameof(Creature.IsDead))!;
+        var isAliveGetter = AccessTools.PropertyGetter(typeof(Creature), nameof(Creature.IsAlive))!;
+        var deadCheck = AccessTools.Method(typeof(BossCombatState), nameof(BossCombatState.IsDeadForCombatResolution))!;
+        var aliveCheck = AccessTools.Method(typeof(BossCombatState), nameof(BossCombatState.IsAliveForCombatResolution))!;
+        var patched = new List<CodeInstruction>();
+        var replacedDeadChecks = 0;
+        var replacedAliveChecks = 0;
+
+        foreach (var instruction in instructions)
+        {
+            if (instruction.Calls(isDeadGetter))
+            {
+                instruction.opcode = OpCodes.Call;
+                instruction.operand = deadCheck;
+                replacedDeadChecks++;
+            }
+            else if (instruction.Calls(isAliveGetter))
+            {
+                instruction.opcode = OpCodes.Call;
+                instruction.operand = aliveCheck;
+                replacedAliveChecks++;
+            }
+
+            patched.Add(instruction);
+        }
+
+        if (replacedDeadChecks == 0)
+            throw new InvalidOperationException($"AttackCommand.Execute checks changed: IsDead={replacedDeadChecks}, IsAlive={replacedAliveChecks}.");
+
+        Log.Info($"[{ModEntry.ModId}] protected AttackCommand.Execute checks: IsDead={replacedDeadChecks}, IsAlive={replacedAliveChecks}.");
+        return patched;
     }
 }
 
