@@ -11,6 +11,7 @@ internal static class BossToggleButton
     private static readonly Dictionary<Button, PanelContainer> Panels = new();
     private static readonly HashSet<CanvasLayer> Layers = new();
     private static readonly Dictionary<Button, (Label State, Panel Track, Panel Thumb)> Indicators = new();
+    private static Vector2 SavedPosition = new(34, 116);
 
     public static void Attach(NCombatRoom room)
     {
@@ -25,7 +26,7 @@ internal static class BossToggleButton
         var panel = new PanelContainer
         {
             Name = "BossSurvivalPanel",
-            Position = new Vector2(34, 116),
+            Position = SavedPosition,
             CustomMinimumSize = new Vector2(324, 86),
             MouseFilter = Control.MouseFilterEnum.Ignore
         };
@@ -51,8 +52,58 @@ internal static class BossToggleButton
         button.AddThemeStyleboxOverride("hover", MakeButtonStyle("#263746", "#f5d478", 2));
         button.AddThemeStyleboxOverride("pressed", MakeButtonStyle("#152e2c", "#73dec0", 2));
         button.AddThemeStyleboxOverride("disabled", MakeButtonStyle("#202328", "#454a4f", 1));
+        var dragging = false;
+        var moved = false;
+        var dragStart = Vector2.Zero;
+        var panelStart = Vector2.Zero;
+        button.GuiInput += input =>
+        {
+            if (input is InputEventMouseButton mouse && mouse.ButtonIndex == MouseButton.Left)
+            {
+                if (mouse.Pressed)
+                {
+                    dragging = true;
+                    moved = false;
+                    dragStart = panel.GetGlobalMousePosition();
+                    panelStart = panel.Position;
+                }
+                else
+                {
+                    dragging = false;
+                    if (moved)
+                    {
+                        SavedPosition = panel.Position;
+                        // Consume drag release before BaseButton treats it as a click.
+                        button.SetPressedNoSignal(false);
+                        button.AcceptEvent();
+                    }
+                }
+            }
+            else if (input is InputEventMouseMotion && dragging)
+            {
+                if (!Input.IsMouseButtonPressed(MouseButton.Left))
+                {
+                    dragging = false;
+                    return;
+                }
+                var delta = panel.GetGlobalMousePosition() - dragStart;
+                moved |= delta.LengthSquared() >= 36;
+                if (moved)
+                {
+                    var viewport = panel.GetViewportRect().Size;
+                    var destination = panelStart + delta;
+                    panel.Position = new Vector2(
+                        Mathf.Clamp(destination.X, 0, Math.Max(0, viewport.X - panel.Size.X)),
+                        Mathf.Clamp(destination.Y, 0, Math.Max(0, viewport.Y - panel.Size.Y)));
+                    SavedPosition = panel.Position;
+                    button.AcceptEvent();
+                }
+            }
+        };
         button.Pressed += () =>
         {
+            if (moved)
+                return;
             Log.Info("[boss-with-infinite-health] toggle pressed");
             BossCombatState.TrySetEnabled(!BossCombatState.Enabled);
         };
@@ -104,7 +155,7 @@ internal static class BossToggleButton
         if (Panels.TryGetValue(button, out var panel) && GodotObject.IsInstanceValid(panel))
             panel.Visible = BossCombatState.IsBossCombat;
         button.Disabled = !BossCombatState.CanChange;
-        button.TooltipText = BossCombatState.CanChange ? "点击切换。关闭后，负血敌人在回合交界死亡。" : "仅房主可操作";
+        button.TooltipText = BossCombatState.CanChange ? "点击切换；按住左键拖动。关闭后，负血敌人在回合交界死亡。" : "仅房主可操作";
         if (Indicators.TryGetValue(button, out var indicator))
         {
             var enabled = BossCombatState.Enabled;

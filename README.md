@@ -9,10 +9,14 @@ This repository contains a DLL mod for Slay the Spire 2 `v0.107.1`.
   selection and hit checks continue to allow the boss, and the health bar shows
   its actual HP value, including negative values. The boss is exposed as alive to
   combat win-state checks so the combat manager does not enter its ending state.
-- Turning it off does not resurrect or clamp HP. A boss already below zero is
-  allowed to finish the current player-turn boundary, then vanilla death logic
-  proceeds at the enemy-turn transition.
+- Turning it off keeps negative HP until the current player-turn boundary.
+  Immediately before the enemy-turn death batch, negative HP is normalized to
+  zero so vanilla death and resurrection/phase-change logic can proceed safely.
+  Test Subject's SetMaxHp/Heal revival no longer receives negative HP.
 - The state is reset at combat start/end.
+- Hold the left mouse button and drag the switch to move it. A drag does not
+  toggle survival. Position stays within the viewport and is remembered for the
+  current game session.
 - `affects_gameplay` is true, so every multiplayer player must install the same
   mod. The control is host-only.
 

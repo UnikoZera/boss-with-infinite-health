@@ -146,6 +146,11 @@ internal static class BossCombatState
 
         try
         {
+            // Vanilla death/phase transitions assume dead creatures have zero HP.
+            // SetMaxHpInternal reassigns CurrentHp, and revival healing is additive;
+            // retaining overkill here throws or subtracts it from the next phase.
+            foreach (var enemy in deadEnemies)
+                NormalizeForVanillaDeath(enemy);
             // Run only after AfterSideTurnStart finishes. StartTurn has already
             // called AfterTurnStart and AfterBlockCleared for its participant
             // snapshot, so removing enemies here cannot leave a detached
@@ -160,6 +165,12 @@ internal static class BossCombatState
                     _pendingDeath = false;
             }
         }
+    }
+
+    public static void NormalizeForVanillaDeath(Creature creature)
+    {
+        if (creature.CurrentHp < 0)
+            creature.SetCurrentHpInternal(0);
     }
 
     public static bool IsProtectedEnemy(Creature creature) =>
