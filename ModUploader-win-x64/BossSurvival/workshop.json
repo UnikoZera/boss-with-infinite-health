@@ -1,0 +1,9 @@
+{
+  "title": "BOSS 无限生命",
+  "description": "平时和朋友玩还没启动BOSS就没血了? \n玩海克斯MOD刚刚启动BOSS就死了? \n队友抢人头导致自己没DPS? \n没关系! 这里有《杀戮尖塔 2》的 BOSS 无限血量开关。房主可以在 BOSS 战中开启开关，让 BOSS 在生命值低于 0 后继续行动。\n血条会按原始最大生命值分段显示溢出伤害，而且支持多人游戏! \n需要 BaseLib 3.4.7 或更高版本。多人游戏中的所有玩家都必须安装相同版本。",
+  "visibility": "private",
+  "changeNote": "保存开关位置，并将 BOSS 负数生命值显示为分段黄色血条；同步更新构建文件和上传工作区。",
+  "tags": ["Gameplay", "UI"],
+  "dependencies": ["3737335127"],
+  "contentDescriptors": []
+}
