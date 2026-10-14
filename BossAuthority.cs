@@ -1,16 +1,14 @@
 using MegaCrit.Sts2.Core.Multiplayer.Game;
+using MegaCrit.Sts2.Core.Multiplayer;
 using MegaCrit.Sts2.Core.Runs;
 
 namespace BossSurvival;
 
-/// <summary>
-/// Host authority boundary. STS2 v0.107.1 exposes the net service, but no public
-/// mod-settings message registry. The combat state is therefore authoritative on
-/// the host and this adapter is the single place to add a registered net message
-/// when that API is available in a future game build.
-/// </summary>
 internal static class BossAuthority
 {
+    private static INetGameService? _registeredService;
+    private static readonly MessageHandlerDelegate<BossSurvivalToggleMessage> ToggleHandler = OnToggleMessage;
+
     public static bool IsHost
     {
         get
@@ -20,10 +18,49 @@ internal static class BossAuthority
         }
     }
 
+    public static void Begin(bool enabled)
+    {
+        var service = FindNetService();
+        if (!ReferenceEquals(service, _registeredService))
+        {
+            _registeredService?.UnregisterMessageHandler(ToggleHandler);
+            _registeredService = service;
+            _registeredService?.RegisterMessageHandler(ToggleHandler);
+        }
+
+        if (IsHost)
+            Broadcast(enabled);
+        else if (service is { IsConnected: true })
+            service.SendMessage(new BossSurvivalToggleMessage { Request = true });
+    }
+
+    public static void End()
+    {
+        _registeredService?.UnregisterMessageHandler(ToggleHandler);
+        _registeredService = null;
+    }
+
     public static void Broadcast(bool enabled)
     {
-        // State-changing UI is host-only. Vanilla action synchronization keeps
-        // the combat state deterministic; no client is allowed to write locally.
+        var service = FindNetService();
+        if (IsHost && service is { IsConnected: true })
+            service.SendMessage(new BossSurvivalToggleMessage { Enabled = enabled });
+    }
+
+    private static void OnToggleMessage(BossSurvivalToggleMessage message, ulong senderId)
+    {
+        var service = FindNetService();
+        if (service is { Type: NetGameType.Host })
+        {
+            if (message.Request && BossCombatState.IsBossCombat)
+                Broadcast(BossCombatState.Enabled);
+            return;
+        }
+
+        if (service is not NetClientGameService client || message.Request || senderId != client.HostNetId)
+            return;
+
+        BossCombatState.SetSynchronizedEnabled(message.Enabled);
     }
 
     private static INetGameService? FindNetService()

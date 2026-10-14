@@ -1,0 +1,2007 @@
+State divergence diagnostics
+============================
+
+7 differing field(s) found for checksum #258.
+If you are seeing this window, the game itself has reported state divergence. This window only provides additional analysis of that state.
+Role: Host  Remote peer: 76561199728860466
+
+Framework versions
+  RitsuLib: v0.6.7 (compat 0.107.1)
+  BaseLib: v3.4.7
+
+Local
+  ID: 258
+  Checksum: 2602826247  Sort: ModelDb stable / SavedProperty existing
+  Context: finished action execution PlayCardAction card: CARD.WHIRLWIND (30916174) index: 30 targetid: 
+Remote
+  ID: 258
+  Checksum: 2575176316  Sort: ModelDb stable / SavedProperty existing
+  Context: Remote divergence message
+
+Local all loaded mods
+  #01 [non-gameplay, enabled] RitsuLib (STS2-RitsuLib) version=0.6.7 source=SteamWorkshop workshop=3747602295
+  #02 [non-gameplay, enabled] BaseLib version=v3.4.7 source=SteamWorkshop workshop=3737335127
+  #03 [non-gameplay, enabled] JmcModLib version=1.9.0 source=SteamWorkshop workshop=3747526103
+  #04 [gameplay, enabled] QuickSL version=1.8.0 source=SteamWorkshop workshop=3747539544
+  #05 [non-gameplay, enabled] 弹幕尖塔 DanmakuSpire (DanmakuSpire) version=v1.2.1 source=SteamWorkshop workshop=3779807977
+  #06 [non-gameplay, enabled] 铁画银钩 | 细致地优化中文字体 (StS2ZhFont) version=v1.1.2 source=SteamWorkshop workshop=3773102248
+  #07 [non-gameplay, enabled] Chatty Vakuu's Earring (ChattyVakuusEarring) version=v0.4.0 source=SteamWorkshop workshop=3809032225
+  #08 [non-gameplay, enabled] sts_nndx version=0.1.1 source=SteamWorkshop workshop=3754231537
+  #09 [non-gameplay, enabled] 更多铁甲战士动画 (ShieldOnly) version=v1.9.58-layer.1 source=SteamWorkshop workshop=3798368044
+  #10 [non-gameplay, enabled] 解锁全部 (unlock_all) version=0.0.1 source=SteamWorkshop workshop=3766881294
+  #11 [non-gameplay, enabled] rDPS Meter (RdpsMeter) version=0.1.32 source=SteamWorkshop workshop=3770944853
+  #12 [non-gameplay, enabled] Omniscient Crystal Sphere (OmniscientCrystalSphere) version=v0.4.0 source=SteamWorkshop workshop=3747839337
+  #13 [non-gameplay, enabled] Intent Graph (intentgraph2) version=1.6.0 source=SteamWorkshop workshop=3747528152
+  #14 [non-gameplay, enabled] 万象辉星[RegentFX] (RegentFX) version=0.5.1 source=SteamWorkshop workshop=3747497501
+  #15 [non-gameplay, enabled] Minty Spire 2 (MintySpire2) version=v1.2.0 source=SteamWorkshop workshop=3737336234
+  #16 [non-gameplay, enabled] CookieCursor version=0.7.0 source=SteamWorkshop workshop=3749027556
+  #17 [non-gameplay, enabled] BetterAnimation2 version=0.6.1 source=SteamWorkshop workshop=3777276296
+  #18 [gameplay, enabled] 向建筑师投掷药水 (ThrowPotionsAtArchitect) version=1.4.1 source=SteamWorkshop workshop=3785664177
+  #19 [gameplay, enabled] MultiEnchantmentMod version=v2.4.14 source=SteamWorkshop workshop=3747561525
+  #20 [non-gameplay, enabled] Bing Smith (BingSmith) version=1.5.0 source=SteamWorkshop workshop=3814730273
+  #21 [non-gameplay, enabled] 亡灵契约师皮肤：特莉波卡 Necrobinder Skin : Tlipoca (Tlipoca) version=1.0.0 source=SteamWorkshop workshop=3813115531
+  #22 [non-gameplay, enabled] 冰冰冰！地图催促音效 (BingBingPing) version=1.0.0 source=SteamWorkshop workshop=3805061340
+  #23 [gameplay, enabled] STS2 God Mod (sts2_god_mod) version=1.7.10 source=SteamWorkshop workshop=3747719229
+  #24 [non-gameplay, enabled] Map Enhance Mod (sts2_map_mod) version=0.8.3 source=SteamWorkshop workshop=3747722862
+  #25 [gameplay, enabled] boss-with-infinite-health version=0.1.0 source=ModsDirectory
+
+Remote all loaded mods
+  #01 [non-gameplay, enabled] 冰冰冰！地图催促音效 (BingBingPing) version=1.0.0 source=SteamWorkshop workshop=3805061340
+  #02 [non-gameplay, enabled] Better Mod Menu (BetterModMenu) version=1.1.1 source=SteamWorkshop workshop=3748029698
+  #03 [non-gameplay, enabled] 解锁全部 (unlock_all) version=0.0.1 source=SteamWorkshop workshop=3766881294
+  #04 [non-gameplay, enabled] RitsuLib (STS2-RitsuLib) version=0.6.7 source=SteamWorkshop workshop=3747602295
+  #05 [non-gameplay, enabled] BaseLib version=v3.4.7 source=SteamWorkshop workshop=3737335127
+  #06 [non-gameplay, enabled] BetterAnimation2 version=0.6.1 source=SteamWorkshop workshop=3777276296
+  #07 [non-gameplay, enabled] Minty Spire 2 (MintySpire2) version=v1.2.0 source=SteamWorkshop workshop=3737336234
+  #08 [non-gameplay, enabled] 铁画银钩 | 细致地优化中文字体 (StS2ZhFont) version=v1.1.2 source=SteamWorkshop workshop=3773102248
+  #09 [non-gameplay, enabled] Chatty Vakuu's Earring (ChattyVakuusEarring) version=v0.4.0 source=SteamWorkshop workshop=3809032225
+  #10 [non-gameplay, enabled] sts_nndx version=0.1.1 source=SteamWorkshop workshop=3754231537
+  #11 [non-gameplay, enabled] Bing Smith (BingSmith) version=1.5.0 source=SteamWorkshop workshop=3814730273
+  #12 [non-gameplay, enabled] Intent Graph (intentgraph2) version=1.6.0 source=SteamWorkshop workshop=3747528152
+  #13 [non-gameplay, enabled] rDPS Meter (RdpsMeter) version=0.1.32 source=SteamWorkshop workshop=3770944853
+  #14 [non-gameplay, enabled] 更多铁甲战士动画 (ShieldOnly) version=v1.9.58-layer.1 source=SteamWorkshop workshop=3798368044
+  #15 [non-gameplay, enabled] 万象辉星[RegentFX] (RegentFX) version=0.5.1 source=SteamWorkshop workshop=3747497501
+  #16 [non-gameplay, enabled] JmcModLib version=1.9.0 source=SteamWorkshop workshop=3747526103
+  #17 [gameplay, enabled] 向建筑师投掷药水 (ThrowPotionsAtArchitect) version=1.4.1 source=SteamWorkshop workshop=3785664177
+  #18 [gameplay, enabled] QuickSL version=1.8.0 source=SteamWorkshop workshop=3747539544
+  #19 [gameplay, enabled] MultiEnchantmentMod version=v2.4.14 source=SteamWorkshop workshop=3747561525
+  #20 [non-gameplay, enabled] Omniscient Crystal Sphere (OmniscientCrystalSphere) version=v0.4.0 source=SteamWorkshop workshop=3747839337
+  #21 [non-gameplay, enabled] CookieCursor version=0.7.0 source=SteamWorkshop workshop=3749027556
+  #22 [non-gameplay, enabled] 弹幕尖塔 DanmakuSpire (DanmakuSpire) version=v1.2.1 source=SteamWorkshop workshop=3779807977
+  #23 [gameplay, enabled] STS2 God Mod (sts2_god_mod) version=1.7.10 source=SteamWorkshop workshop=3747719229
+  #24 [non-gameplay, enabled] Map Enhance Mod (sts2_map_mod) version=0.8.3 source=SteamWorkshop workshop=3747722862
+  #25 [gameplay, enabled] boss-with-infinite-health version=0.1.0 source=ModsDirectory
+
+Local content/dependency mods
+  #01 [dependency, enabled] RitsuLib (STS2-RitsuLib) version=0.6.7 source=SteamWorkshop workshop=3747602295
+  #02 [dependency, enabled] BaseLib version=v3.4.7 source=SteamWorkshop workshop=3737335127
+  #03 [dependency, enabled] JmcModLib version=1.9.0 source=SteamWorkshop workshop=3747526103
+  #04 [content, enabled] QuickSL version=1.8.0 source=SteamWorkshop workshop=3747539544
+  #05 [content, enabled] 向建筑师投掷药水 (ThrowPotionsAtArchitect) version=1.4.1 source=SteamWorkshop workshop=3785664177
+  #06 [content, enabled] MultiEnchantmentMod version=v2.4.14 source=SteamWorkshop workshop=3747561525
+  #07 [content, enabled] STS2 God Mod (sts2_god_mod) version=1.7.10 source=SteamWorkshop workshop=3747719229
+  #08 [content, enabled] boss-with-infinite-health version=0.1.0 source=ModsDirectory
+
+Remote content/dependency mods
+  #01 [dependency, enabled] RitsuLib (STS2-RitsuLib) version=0.6.7 source=SteamWorkshop workshop=3747602295
+  #02 [dependency, enabled] BaseLib version=v3.4.7 source=SteamWorkshop workshop=3737335127
+  #03 [dependency, enabled] JmcModLib version=1.9.0 source=SteamWorkshop workshop=3747526103
+  #04 [content, enabled] 向建筑师投掷药水 (ThrowPotionsAtArchitect) version=1.4.1 source=SteamWorkshop workshop=3785664177
+  #05 [content, enabled] QuickSL version=1.8.0 source=SteamWorkshop workshop=3747539544
+  #06 [content, enabled] MultiEnchantmentMod version=v2.4.14 source=SteamWorkshop workshop=3747561525
+  #07 [content, enabled] STS2 God Mod (sts2_god_mod) version=1.7.10 source=SteamWorkshop workshop=3747719229
+  #08 [content, enabled] boss-with-infinite-health version=0.1.0 source=ModsDirectory
+
+Local progress
+  schemaVersion=0
+  numberOfRuns=53
+  epochs:
+    ACT2_B_EPOCH: state=Revealed obtainDate=1785219439
+    ACT3_B_EPOCH: state=Revealed obtainDate=1785219439
+    COLORLESS1_EPOCH: state=Revealed obtainDate=1785219439
+    COLORLESS2_EPOCH: state=Revealed obtainDate=1785219439
+    COLORLESS3_EPOCH: state=Revealed obtainDate=1785219439
+    COLORLESS4_EPOCH: state=Revealed obtainDate=1785219439
+    COLORLESS5_EPOCH: state=Revealed obtainDate=1785219439
+    CUSTOM_AND_SEEDS_EPOCH: state=Revealed obtainDate=1785219439
+    DAILY_RUN_EPOCH: state=Revealed obtainDate=1785219439
+    DARV_EPOCH: state=Revealed obtainDate=1785219439
+    DEFECT1_EPOCH: state=Revealed obtainDate=1785219439
+    DEFECT2_EPOCH: state=Revealed obtainDate=1785219439
+    DEFECT3_EPOCH: state=Revealed obtainDate=1785219439
+    DEFECT4_EPOCH: state=Revealed obtainDate=1785219439
+    DEFECT5_EPOCH: state=Revealed obtainDate=1785219439
+    DEFECT6_EPOCH: state=Revealed obtainDate=1785219439
+    DEFECT7_EPOCH: state=Revealed obtainDate=1785219439
+    EVENT1_EPOCH: state=Revealed obtainDate=1785219439
+    EVENT2_EPOCH: state=Revealed obtainDate=1785219439
+    EVENT3_EPOCH: state=Revealed obtainDate=1785219439
+    IRONCLAD2_EPOCH: state=Revealed obtainDate=1785219439
+    IRONCLAD3_EPOCH: state=Revealed obtainDate=1785219439
+    IRONCLAD4_EPOCH: state=Revealed obtainDate=1785219439
+    IRONCLAD5_EPOCH: state=Revealed obtainDate=1785219439
+    IRONCLAD6_EPOCH: state=Revealed obtainDate=1785219439
+    IRONCLAD7_EPOCH: state=Revealed obtainDate=1785219439
+    NECROBINDER1_EPOCH: state=Revealed obtainDate=1785219439
+    NECROBINDER2_EPOCH: state=Revealed obtainDate=1785219439
+    NECROBINDER3_EPOCH: state=Revealed obtainDate=1785219439
+    NECROBINDER4_EPOCH: state=Revealed obtainDate=1785219439
+    NECROBINDER5_EPOCH: state=Revealed obtainDate=1785219439
+    NECROBINDER6_EPOCH: state=Revealed obtainDate=1785219439
+    NECROBINDER7_EPOCH: state=Revealed obtainDate=1785219439
+    NEOW_EPOCH: state=Revealed obtainDate=1785219439
+    OROBAS_EPOCH: state=Revealed obtainDate=1785219439
+    POTION1_EPOCH: state=Revealed obtainDate=1785219439
+    POTION2_EPOCH: state=Revealed obtainDate=1785219439
+    REGENT1_EPOCH: state=Revealed obtainDate=1785219439
+    REGENT2_EPOCH: state=Revealed obtainDate=1785219439
+    REGENT3_EPOCH: state=Revealed obtainDate=1785219439
+    REGENT4_EPOCH: state=Revealed obtainDate=1785219439
+    REGENT5_EPOCH: state=Revealed obtainDate=1785219439
+    REGENT6_EPOCH: state=Revealed obtainDate=1785219439
+    REGENT7_EPOCH: state=Revealed obtainDate=1785219439
+    RELIC1_EPOCH: state=Revealed obtainDate=1785219439
+    RELIC2_EPOCH: state=Revealed obtainDate=1785219439
+    RELIC3_EPOCH: state=Revealed obtainDate=1785219439
+    RELIC4_EPOCH: state=Revealed obtainDate=1785219439
+    RELIC5_EPOCH: state=Revealed obtainDate=1785219439
+    SILENT1_EPOCH: state=Revealed obtainDate=1785219439
+    SILENT2_EPOCH: state=Revealed obtainDate=1785219439
+    SILENT3_EPOCH: state=Revealed obtainDate=1785219439
+    SILENT4_EPOCH: state=Revealed obtainDate=1785219439
+    SILENT5_EPOCH: state=Revealed obtainDate=1785219439
+    SILENT6_EPOCH: state=Revealed obtainDate=1785219439
+    SILENT7_EPOCH: state=Revealed obtainDate=1785219439
+    UNDERDOCKS_EPOCH: state=Revealed obtainDate=1785219439
+
+Remote progress
+  schemaVersion=0
+  numberOfRuns=45
+  epochs:
+    ACT2_B_EPOCH: state=Revealed obtainDate=1788342159
+    ACT3_B_EPOCH: state=Revealed obtainDate=1788342159
+    COLORLESS1_EPOCH: state=Revealed obtainDate=1788342159
+    COLORLESS2_EPOCH: state=Revealed obtainDate=1788342159
+    COLORLESS3_EPOCH: state=Revealed obtainDate=1788342159
+    COLORLESS4_EPOCH: state=Revealed obtainDate=1788342159
+    COLORLESS5_EPOCH: state=Revealed obtainDate=1788342159
+    CUSTOM_AND_SEEDS_EPOCH: state=Revealed obtainDate=1788342159
+    DAILY_RUN_EPOCH: state=Revealed obtainDate=1788342159
+    DARV_EPOCH: state=Revealed obtainDate=1788342159
+    DEFECT1_EPOCH: state=Revealed obtainDate=1788342159
+    DEFECT2_EPOCH: state=Revealed obtainDate=1788342159
+    DEFECT3_EPOCH: state=Revealed obtainDate=1788342159
+    DEFECT4_EPOCH: state=Revealed obtainDate=1788342159
+    DEFECT5_EPOCH: state=Revealed obtainDate=1788342159
+    DEFECT6_EPOCH: state=Revealed obtainDate=1788342159
+    DEFECT7_EPOCH: state=Revealed obtainDate=1788342159
+    EVENT1_EPOCH: state=Revealed obtainDate=1788342159
+    EVENT2_EPOCH: state=Revealed obtainDate=1788342159
+    EVENT3_EPOCH: state=Revealed obtainDate=1788342159
+    IRONCLAD2_EPOCH: state=Revealed obtainDate=1788342159
+    IRONCLAD3_EPOCH: state=Revealed obtainDate=1788342159
+    IRONCLAD4_EPOCH: state=Revealed obtainDate=1788342159
+    IRONCLAD5_EPOCH: state=Revealed obtainDate=1788342159
+    IRONCLAD6_EPOCH: state=Revealed obtainDate=1788342159
+    IRONCLAD7_EPOCH: state=Revealed obtainDate=1788342159
+    NECROBINDER1_EPOCH: state=Revealed obtainDate=1788342159
+    NECROBINDER2_EPOCH: state=Revealed obtainDate=1788342159
+    NECROBINDER3_EPOCH: state=Revealed obtainDate=1788342159
+    NECROBINDER4_EPOCH: state=Revealed obtainDate=1788342159
+    NECROBINDER5_EPOCH: state=Revealed obtainDate=1788342159
+    NECROBINDER6_EPOCH: state=Revealed obtainDate=1788342159
+    NECROBINDER7_EPOCH: state=Revealed obtainDate=1788342159
+    NEOW_EPOCH: state=Revealed obtainDate=1788342159
+    OROBAS_EPOCH: state=Revealed obtainDate=1788342159
+    POTION1_EPOCH: state=Revealed obtainDate=1788342159
+    POTION2_EPOCH: state=Revealed obtainDate=1788342159
+    REGENT1_EPOCH: state=Revealed obtainDate=1788342159
+    REGENT2_EPOCH: state=Revealed obtainDate=1788342159
+    REGENT3_EPOCH: state=Revealed obtainDate=1788342159
+    REGENT4_EPOCH: state=Revealed obtainDate=1788342159
+    REGENT5_EPOCH: state=Revealed obtainDate=1788342159
+    REGENT6_EPOCH: state=Revealed obtainDate=1788342159
+    REGENT7_EPOCH: state=Revealed obtainDate=1788342159
+    RELIC1_EPOCH: state=Revealed obtainDate=1788342159
+    RELIC2_EPOCH: state=Revealed obtainDate=1788342159
+    RELIC3_EPOCH: state=Revealed obtainDate=1788342159
+    RELIC4_EPOCH: state=Revealed obtainDate=1788342159
+    RELIC5_EPOCH: state=Revealed obtainDate=1788342159
+    SILENT1_EPOCH: state=Revealed obtainDate=1788342159
+    SILENT2_EPOCH: state=Revealed obtainDate=1788342159
+    SILENT3_EPOCH: state=Revealed obtainDate=1788342159
+    SILENT4_EPOCH: state=Revealed obtainDate=1788342159
+    SILENT5_EPOCH: state=Revealed obtainDate=1788342159
+    SILENT6_EPOCH: state=Revealed obtainDate=1788342159
+    SILENT7_EPOCH: state=Revealed obtainDate=1788342159
+    UNDERDOCKS_EPOCH: state=Revealed obtainDate=1788342159
+
+Overview
+--------
+Checksum identity, checksum value, and network context.
+checksum.id: local=258; remote=258
+checksum.value: local=2602826247; remote=2575176316
+context.local
+  Local context is recorded by this peer; remote context is not carried by the vanilla divergence message.
+  local:
+    finished action execution PlayCardAction card: CARD.WHIRLWIND (30916174) index: 30 targetid: 
+  remote:
+    Remote divergence message
+network.remotePeer: local=76561199728860466; remote=Host
+
+Loaded mods
+-----------
+Complete runtime mod inventory, plus set, version, source, and load-order differences.
+loadedMods.count: local=25; remote=25
+loadedMods.set
+  Entries shown in this row are present only on that side, compared by mod id and source.
+  local:
+    #21 [non-gameplay] 亡灵契约师皮肤：特莉波卡 Necrobinder Skin : Tlipoca (Tlipoca) version=1.0.0 source=SteamWorkshop workshop=3813115531
+  remote:
+    #02 [non-gameplay] Better Mod Menu (BetterModMenu) version=1.1.1 source=SteamWorkshop workshop=3748029698
+loadedMods.SteamWorkshop.STS2-RitsuLib.version: local=0.6.7; remote=0.6.7
+loadedMods.SteamWorkshop.STS2-RitsuLib.name: local=RitsuLib; remote=RitsuLib
+loadedMods.SteamWorkshop.STS2-RitsuLib.workshopItemId: local=3747602295; remote=3747602295
+loadedMods.SteamWorkshop.STS2-RitsuLib.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.BaseLib.version: local=v3.4.7; remote=v3.4.7
+loadedMods.SteamWorkshop.BaseLib.name: local=BaseLib; remote=BaseLib
+loadedMods.SteamWorkshop.BaseLib.workshopItemId: local=3737335127; remote=3737335127
+loadedMods.SteamWorkshop.BaseLib.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.JmcModLib.version: local=1.9.0; remote=1.9.0
+loadedMods.SteamWorkshop.JmcModLib.name: local=JmcModLib; remote=JmcModLib
+loadedMods.SteamWorkshop.JmcModLib.workshopItemId: local=3747526103; remote=3747526103
+loadedMods.SteamWorkshop.JmcModLib.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.QuickSL.version: local=1.8.0; remote=1.8.0
+loadedMods.SteamWorkshop.QuickSL.name: local=QuickSL; remote=QuickSL
+loadedMods.SteamWorkshop.QuickSL.workshopItemId: local=3747539544; remote=3747539544
+loadedMods.SteamWorkshop.QuickSL.affectsGameplay: local=True; remote=True
+loadedMods.SteamWorkshop.DanmakuSpire.version: local=v1.2.1; remote=v1.2.1
+loadedMods.SteamWorkshop.DanmakuSpire.name: local=弹幕尖塔 DanmakuSpire; remote=弹幕尖塔 DanmakuSpire
+loadedMods.SteamWorkshop.DanmakuSpire.workshopItemId: local=3779807977; remote=3779807977
+loadedMods.SteamWorkshop.DanmakuSpire.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.StS2ZhFont.version: local=v1.1.2; remote=v1.1.2
+loadedMods.SteamWorkshop.StS2ZhFont.name: local=铁画银钩 | 细致地优化中文字体; remote=铁画银钩 | 细致地优化中文字体
+loadedMods.SteamWorkshop.StS2ZhFont.workshopItemId: local=3773102248; remote=3773102248
+loadedMods.SteamWorkshop.StS2ZhFont.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.ChattyVakuusEarring.version: local=v0.4.0; remote=v0.4.0
+loadedMods.SteamWorkshop.ChattyVakuusEarring.name: local=Chatty Vakuu's Earring; remote=Chatty Vakuu's Earring
+loadedMods.SteamWorkshop.ChattyVakuusEarring.workshopItemId: local=3809032225; remote=3809032225
+loadedMods.SteamWorkshop.ChattyVakuusEarring.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.sts_nndx.version: local=0.1.1; remote=0.1.1
+loadedMods.SteamWorkshop.sts_nndx.name: local=sts_nndx; remote=sts_nndx
+loadedMods.SteamWorkshop.sts_nndx.workshopItemId: local=3754231537; remote=3754231537
+loadedMods.SteamWorkshop.sts_nndx.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.ShieldOnly.version: local=v1.9.58-layer.1; remote=v1.9.58-layer.1
+loadedMods.SteamWorkshop.ShieldOnly.name: local=更多铁甲战士动画; remote=更多铁甲战士动画
+loadedMods.SteamWorkshop.ShieldOnly.workshopItemId: local=3798368044; remote=3798368044
+loadedMods.SteamWorkshop.ShieldOnly.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.unlock_all.version: local=0.0.1; remote=0.0.1
+loadedMods.SteamWorkshop.unlock_all.name: local=解锁全部; remote=解锁全部
+loadedMods.SteamWorkshop.unlock_all.workshopItemId: local=3766881294; remote=3766881294
+loadedMods.SteamWorkshop.unlock_all.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.RdpsMeter.version: local=0.1.32; remote=0.1.32
+loadedMods.SteamWorkshop.RdpsMeter.name: local=rDPS Meter; remote=rDPS Meter
+loadedMods.SteamWorkshop.RdpsMeter.workshopItemId: local=3770944853; remote=3770944853
+loadedMods.SteamWorkshop.RdpsMeter.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.OmniscientCrystalSphere.version: local=v0.4.0; remote=v0.4.0
+loadedMods.SteamWorkshop.OmniscientCrystalSphere.name: local=Omniscient Crystal Sphere; remote=Omniscient Crystal Sphere
+loadedMods.SteamWorkshop.OmniscientCrystalSphere.workshopItemId: local=3747839337; remote=3747839337
+loadedMods.SteamWorkshop.OmniscientCrystalSphere.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.intentgraph2.version: local=1.6.0; remote=1.6.0
+loadedMods.SteamWorkshop.intentgraph2.name: local=Intent Graph; remote=Intent Graph
+loadedMods.SteamWorkshop.intentgraph2.workshopItemId: local=3747528152; remote=3747528152
+loadedMods.SteamWorkshop.intentgraph2.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.RegentFX.version: local=0.5.1; remote=0.5.1
+loadedMods.SteamWorkshop.RegentFX.name: local=万象辉星[RegentFX]; remote=万象辉星[RegentFX]
+loadedMods.SteamWorkshop.RegentFX.workshopItemId: local=3747497501; remote=3747497501
+loadedMods.SteamWorkshop.RegentFX.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.MintySpire2.version: local=v1.2.0; remote=v1.2.0
+loadedMods.SteamWorkshop.MintySpire2.name: local=Minty Spire 2; remote=Minty Spire 2
+loadedMods.SteamWorkshop.MintySpire2.workshopItemId: local=3737336234; remote=3737336234
+loadedMods.SteamWorkshop.MintySpire2.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.CookieCursor.version: local=0.7.0; remote=0.7.0
+loadedMods.SteamWorkshop.CookieCursor.name: local=CookieCursor; remote=CookieCursor
+loadedMods.SteamWorkshop.CookieCursor.workshopItemId: local=3749027556; remote=3749027556
+loadedMods.SteamWorkshop.CookieCursor.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.BetterAnimation2.version: local=0.6.1; remote=0.6.1
+loadedMods.SteamWorkshop.BetterAnimation2.name: local=BetterAnimation2; remote=BetterAnimation2
+loadedMods.SteamWorkshop.BetterAnimation2.workshopItemId: local=3777276296; remote=3777276296
+loadedMods.SteamWorkshop.BetterAnimation2.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.ThrowPotionsAtArchitect.version: local=1.4.1; remote=1.4.1
+loadedMods.SteamWorkshop.ThrowPotionsAtArchitect.name: local=向建筑师投掷药水; remote=向建筑师投掷药水
+loadedMods.SteamWorkshop.ThrowPotionsAtArchitect.workshopItemId: local=3785664177; remote=3785664177
+loadedMods.SteamWorkshop.ThrowPotionsAtArchitect.affectsGameplay: local=True; remote=True
+loadedMods.SteamWorkshop.MultiEnchantmentMod.version: local=v2.4.14; remote=v2.4.14
+loadedMods.SteamWorkshop.MultiEnchantmentMod.name: local=MultiEnchantmentMod; remote=MultiEnchantmentMod
+loadedMods.SteamWorkshop.MultiEnchantmentMod.workshopItemId: local=3747561525; remote=3747561525
+loadedMods.SteamWorkshop.MultiEnchantmentMod.affectsGameplay: local=True; remote=True
+loadedMods.SteamWorkshop.BingSmith.version: local=1.5.0; remote=1.5.0
+loadedMods.SteamWorkshop.BingSmith.name: local=Bing Smith; remote=Bing Smith
+loadedMods.SteamWorkshop.BingSmith.workshopItemId: local=3814730273; remote=3814730273
+loadedMods.SteamWorkshop.BingSmith.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.BingBingPing.version: local=1.0.0; remote=1.0.0
+loadedMods.SteamWorkshop.BingBingPing.name: local=冰冰冰！地图催促音效; remote=冰冰冰！地图催促音效
+loadedMods.SteamWorkshop.BingBingPing.workshopItemId: local=3805061340; remote=3805061340
+loadedMods.SteamWorkshop.BingBingPing.affectsGameplay: local=False; remote=False
+loadedMods.SteamWorkshop.sts2_god_mod.version: local=1.7.10; remote=1.7.10
+loadedMods.SteamWorkshop.sts2_god_mod.name: local=STS2 God Mod; remote=STS2 God Mod
+loadedMods.SteamWorkshop.sts2_god_mod.workshopItemId: local=3747719229; remote=3747719229
+loadedMods.SteamWorkshop.sts2_god_mod.affectsGameplay: local=True; remote=True
+loadedMods.SteamWorkshop.sts2_map_mod.version: local=0.8.3; remote=0.8.3
+loadedMods.SteamWorkshop.sts2_map_mod.name: local=Map Enhance Mod; remote=Map Enhance Mod
+loadedMods.SteamWorkshop.sts2_map_mod.workshopItemId: local=3747722862; remote=3747722862
+loadedMods.SteamWorkshop.sts2_map_mod.affectsGameplay: local=False; remote=False
+loadedMods.ModsDirectory.boss-with-infinite-health.version: local=0.1.0; remote=0.1.0
+loadedMods.ModsDirectory.boss-with-infinite-health.name: local=boss-with-infinite-health; remote=boss-with-infinite-health
+loadedMods.ModsDirectory.boss-with-infinite-health.workshopItemId: local=<none>; remote=<none>
+loadedMods.ModsDirectory.boss-with-infinite-health.affectsGameplay: local=True; remote=True
+loadedMods.fullList
+  Complete mod inventory in the game's current runtime load order.
+  local:
+    #01 [non-gameplay, dependency] RitsuLib (STS2-RitsuLib) version=0.6.7 source=SteamWorkshop workshop=3747602295
+    #02 [non-gameplay, dependency] BaseLib version=v3.4.7 source=SteamWorkshop workshop=3737335127
+    #03 [non-gameplay, dependency] JmcModLib version=1.9.0 source=SteamWorkshop workshop=3747526103
+    #04 [gameplay] QuickSL version=1.8.0 source=SteamWorkshop workshop=3747539544
+    #05 [non-gameplay] 弹幕尖塔 DanmakuSpire (DanmakuSpire) version=v1.2.1 source=SteamWorkshop workshop=3779807977
+    #06 [non-gameplay] 铁画银钩 | 细致地优化中文字体 (StS2ZhFont) version=v1.1.2 source=SteamWorkshop workshop=3773102248
+    #07 [non-gameplay] Chatty Vakuu's Earring (ChattyVakuusEarring) version=v0.4.0 source=SteamWorkshop workshop=3809032225
+    #08 [non-gameplay] sts_nndx version=0.1.1 source=SteamWorkshop workshop=3754231537
+    #09 [non-gameplay] 更多铁甲战士动画 (ShieldOnly) version=v1.9.58-layer.1 source=SteamWorkshop workshop=3798368044
+    #10 [non-gameplay] 解锁全部 (unlock_all) version=0.0.1 source=SteamWorkshop workshop=3766881294
+    #11 [non-gameplay] rDPS Meter (RdpsMeter) version=0.1.32 source=SteamWorkshop workshop=3770944853
+    #12 [non-gameplay] Omniscient Crystal Sphere (OmniscientCrystalSphere) version=v0.4.0 source=SteamWorkshop workshop=3747839337
+    #13 [non-gameplay] Intent Graph (intentgraph2) version=1.6.0 source=SteamWorkshop workshop=3747528152
+    #14 [non-gameplay] 万象辉星[RegentFX] (RegentFX) version=0.5.1 source=SteamWorkshop workshop=3747497501
+    #15 [non-gameplay] Minty Spire 2 (MintySpire2) version=v1.2.0 source=SteamWorkshop workshop=3737336234
+    #16 [non-gameplay] CookieCursor version=0.7.0 source=SteamWorkshop workshop=3749027556
+    #17 [non-gameplay] BetterAnimation2 version=0.6.1 source=SteamWorkshop workshop=3777276296
+    #18 [gameplay] 向建筑师投掷药水 (ThrowPotionsAtArchitect) version=1.4.1 source=SteamWorkshop workshop=3785664177
+    #19 [gameplay] MultiEnchantmentMod version=v2.4.14 source=SteamWorkshop workshop=3747561525
+    #20 [non-gameplay] Bing Smith (BingSmith) version=1.5.0 source=SteamWorkshop workshop=3814730273
+    #21 [non-gameplay] 亡灵契约师皮肤：特莉波卡 Necrobinder Skin : Tlipoca (Tlipoca) version=1.0.0 source=SteamWorkshop workshop=3813115531
+    #22 [non-gameplay] 冰冰冰！地图催促音效 (BingBingPing) version=1.0.0 source=SteamWorkshop workshop=3805061340
+    #23 [gameplay] STS2 God Mod (sts2_god_mod) version=1.7.10 source=SteamWorkshop workshop=3747719229
+    #24 [non-gameplay] Map Enhance Mod (sts2_map_mod) version=0.8.3 source=SteamWorkshop workshop=3747722862
+    #25 [gameplay] boss-with-infinite-health version=0.1.0 source=ModsDirectory
+  remote:
+    #01 [non-gameplay] 冰冰冰！地图催促音效 (BingBingPing) version=1.0.0 source=SteamWorkshop workshop=3805061340
+    #02 [non-gameplay] Better Mod Menu (BetterModMenu) version=1.1.1 source=SteamWorkshop workshop=3748029698
+    #03 [non-gameplay] 解锁全部 (unlock_all) version=0.0.1 source=SteamWorkshop workshop=3766881294
+    #04 [non-gameplay, dependency] RitsuLib (STS2-RitsuLib) version=0.6.7 source=SteamWorkshop workshop=3747602295
+    #05 [non-gameplay, dependency] BaseLib version=v3.4.7 source=SteamWorkshop workshop=3737335127
+    #06 [non-gameplay] BetterAnimation2 version=0.6.1 source=SteamWorkshop workshop=3777276296
+    #07 [non-gameplay] Minty Spire 2 (MintySpire2) version=v1.2.0 source=SteamWorkshop workshop=3737336234
+    #08 [non-gameplay] 铁画银钩 | 细致地优化中文字体 (StS2ZhFont) version=v1.1.2 source=SteamWorkshop workshop=3773102248
+    #09 [non-gameplay] Chatty Vakuu's Earring (ChattyVakuusEarring) version=v0.4.0 source=SteamWorkshop workshop=3809032225
+    #10 [non-gameplay] sts_nndx version=0.1.1 source=SteamWorkshop workshop=3754231537
+    #11 [non-gameplay] Bing Smith (BingSmith) version=1.5.0 source=SteamWorkshop workshop=3814730273
+    #12 [non-gameplay] Intent Graph (intentgraph2) version=1.6.0 source=SteamWorkshop workshop=3747528152
+    #13 [non-gameplay] rDPS Meter (RdpsMeter) version=0.1.32 source=SteamWorkshop workshop=3770944853
+    #14 [non-gameplay] 更多铁甲战士动画 (ShieldOnly) version=v1.9.58-layer.1 source=SteamWorkshop workshop=3798368044
+    #15 [non-gameplay] 万象辉星[RegentFX] (RegentFX) version=0.5.1 source=SteamWorkshop workshop=3747497501
+    #16 [non-gameplay, dependency] JmcModLib version=1.9.0 source=SteamWorkshop workshop=3747526103
+    #17 [gameplay] 向建筑师投掷药水 (ThrowPotionsAtArchitect) version=1.4.1 source=SteamWorkshop workshop=3785664177
+    #18 [gameplay] QuickSL version=1.8.0 source=SteamWorkshop workshop=3747539544
+    #19 [gameplay] MultiEnchantmentMod version=v2.4.14 source=SteamWorkshop workshop=3747561525
+    #20 [non-gameplay] Omniscient Crystal Sphere (OmniscientCrystalSphere) version=v0.4.0 source=SteamWorkshop workshop=3747839337
+    #21 [non-gameplay] CookieCursor version=0.7.0 source=SteamWorkshop workshop=3749027556
+    #22 [non-gameplay] 弹幕尖塔 DanmakuSpire (DanmakuSpire) version=v1.2.1 source=SteamWorkshop workshop=3779807977
+    #23 [gameplay] STS2 God Mod (sts2_god_mod) version=1.7.10 source=SteamWorkshop workshop=3747719229
+    #24 [non-gameplay] Map Enhance Mod (sts2_map_mod) version=0.8.3 source=SteamWorkshop workshop=3747722862
+    #25 [gameplay] boss-with-infinite-health version=0.1.0 source=ModsDirectory
+
+Protocol maps
+-------------
+RitsuLib divergence supplement data that affects packet decoding, including SavedProperty net-id maps.
+modelDb.deterministicSort: local=Stable sorting; remote=Stable sorting
+savedProperties.deterministicSort: local=Existing order; remote=Existing order
+savedProperties.netIdBitSize: local=6; remote=6
+savedProperties.count: local=52; remote=52
+savedProperties.mapHash: local=0xDA58F0C5; remote=0xDA58F0C5
+savedProperties.netIdMap
+  52 SavedProperty net-id slot(s) differ.
+  local:
+    0000  CurrentBlock
+    0001  IncreasedBlock
+    0002  CombatsSeen
+    0003  TinkerTimeType
+    0004  TinkerTimeRider
+    0005  SpoilsActIndex
+    0006  CurrentDamage
+    0007  IncreasedDamage
+    0008  CharacterModel
+    0009  IsMelted
+    0010  IsWax
+    0011  AncientCard
+    0012  StarterCard
+    0013  CombatsLeft
+    0014  CardsAdded
+    0015  Skin
+    0016  TurnsSeen
+    0017  GainEnergyInNextCombat
+    0018  FurCoatActIndex
+    0019  FurCoatCoordCols
+    0020  FurCoatCoordRows
+    0021  FurCoatCoordsSet
+    0022  StarsSpent
+    0023  TimesLifted
+    0024  GoldenPathAct
+    0025  CardsPlayed
+    0026  CardsExhausted
+    0027  TookDamageThisCombat
+    0028  HasTriggered
+    0029  WasUsed
+    0030  HasItemBeenBought
+    0031  AttacksPlayed
+    0032  SerializableCards
+    0033  RewardsSacrificed
+    0034  KindleCount
+    0035  CharacterId
+    0036  IsUsed
+    0037  TimesUsed
+    0038  TreasureRoomsEntered
+    0039  ElitesDefeated
+    0040  StarterRelic
+    0041  UpgradedRelic
+    0042  SkillsPlayed
+    0043  CombatsFinished
+    0044  GaveRelic
+    0045  MultiEnchantmentCardInstanceId
+    0046  MultiEnchantmentData
+    0047  MultiEnchantmentEnchantmentStatus
+    0048  MultiEnchantmentInstanceId
+    0049  MultiEnchantmentMergedStackAmounts
+    0050  MultiEnchantmentOrderData
+    0051  MultiEnchantmentScopeData
+  remote:
+    0000  CurrentBlock
+    0001  IncreasedBlock
+    0002  CombatsSeen
+    0003  TinkerTimeType
+    0004  TinkerTimeRider
+    0005  SpoilsActIndex
+    0006  CurrentDamage
+    0007  IncreasedDamage
+    0008  CharacterModel
+    0009  IsMelted
+    0010  IsWax
+    0011  AncientCard
+    0012  StarterCard
+    0013  CombatsLeft
+    0014  CardsAdded
+    0015  Skin
+    0016  TurnsSeen
+    0017  GainEnergyInNextCombat
+    0018  FurCoatActIndex
+    0019  FurCoatCoordCols
+    0020  FurCoatCoordRows
+    0021  FurCoatCoordsSet
+    0022  StarsSpent
+    0023  TimesLifted
+    0024  GoldenPathAct
+    0025  CardsPlayed
+    0026  CardsExhausted
+    0027  TookDamageThisCombat
+    0028  HasTriggered
+    0029  WasUsed
+    0030  HasItemBeenBought
+    0031  AttacksPlayed
+    0032  SerializableCards
+    0033  RewardsSacrificed
+    0034  KindleCount
+    0035  CharacterId
+    0036  IsUsed
+    0037  TimesUsed
+    0038  TreasureRoomsEntered
+    0039  ElitesDefeated
+    0040  StarterRelic
+    0041  UpgradedRelic
+    0042  SkillsPlayed
+    0043  CombatsFinished
+    0044  GaveRelic
+    0045  MultiEnchantmentCardInstanceId
+    0046  MultiEnchantmentData
+    0047  MultiEnchantmentEnchantmentStatus
+    0048  MultiEnchantmentInstanceId
+    0049  MultiEnchantmentMergedStackAmounts
+    0050  MultiEnchantmentOrderData
+    0051  MultiEnchantmentScopeData
+
+Sync markers
+------------
+Choice IDs, reward IDs, and the last executed action or hook.
+choices.nextChoiceIds: local=12, 16; remote=12, 16
+rewards.nextRewardIds: local=10, 9; remote=10, 9
+actions.lastExecutedActionId: local=292; remote=292
+actions.lastExecutedHookId: local=<none>; remote=<none>
+
+Creatures
+---------
+Monster/player combat HP, block, and powers.
+creatures.count: local=3; remote=2
+creatures[0].identity: local=player:76561199787554826; remote=player:76561199787554826
+creatures[0].currentHp: local=326; remote=326
+creatures[0].maxHp: local=799; remote=799
+creatures[0].block: local=0; remote=0
+creatures[0].powers: local=POWER.STRENGTH_POWER (力量):8, POWER.RUPTURE_POWER (撕裂):2, POWER.VICIOUS_POWER (凶恶):2; remote=POWER.STRENGTH_POWER (力量):8, POWER.RUPTURE_POWER (撕裂):2, POWER.VICIOUS_POWER (凶恶):2
+creatures[1].identity: local=player:76561199728860466; remote=player:76561199728860466
+creatures[1].currentHp: local=75; remote=75
+creatures[1].maxHp: local=688; remote=688
+creatures[1].block: local=10; remote=10
+creatures[1].powers: local=<empty>; remote=<empty>
+creatures[2]: local=MegaCrit.Sts2.Core.Entities.Multiplayer.NetFullCombatState+CreatureState; remote=Missing
+
+Players
+-------
+Player combat resources, inventory, orbs, and card piles.
+players.count: local=2; remote=2
+players[0].playerId: local=76561199787554826; remote=76561199787554826
+players[0].character: local=CHARACTER.IRONCLAD (铁甲战士); remote=CHARACTER.IRONCLAD (铁甲战士)
+players[0].turnNumber: local=2; remote=2
+players[0].phase: local=Play; remote=Play
+players[0].energy: local=0; remote=0
+players[0].stars: local=0; remote=0
+players[0].maxPotionCount: local=4; remote=4
+players[0].gold: local=9243; remote=9243
+players[0].potions: local=POTION.FLEX_POTION (肌肉药水), POTION.FAIRY_IN_A_BOTTLE (瓶中精灵), POTION.POWER_POTION (能力药水), POTION.WEAK_POTION (虚弱药水); remote=POTION.FLEX_POTION (肌肉药水), POTION.FAIRY_IN_A_BOTTLE (瓶中精灵), POTION.POWER_POTION (能力药水), POTION.WEAK_POTION (虚弱药水)
+players[0].relics
+  Local: 13 item(s); remote: 13 item(s); first mismatch: index 00.
+  00: local=RELIC.BURNING_BLOOD (燃烧之血) floor=1; remote=RELIC.BURNING_BLOOD (燃烧之血) floor=1
+    floor
+      local: 1
+      remote: 1
+    props
+      local: <none>
+      remote: <none>
+  01: local=RELIC.PRECARIOUS_SHEARS (松动羊毛剪) floor=1; remote=RELIC.PRECARIOUS_SHEARS (松动羊毛剪) floor=1
+    floor
+      local: 1
+      remote: 1
+    props
+      local: <none>
+      remote: <none>
+  02: local=RELIC.FROZEN_EGG (冻结之蛋) floor=7; remote=RELIC.FROZEN_EGG (冻结之蛋) floor=7
+    floor
+      local: 7
+      remote: 7
+    props
+      local: <none>
+      remote: <none>
+  03: local=RELIC.MOLTEN_EGG (熔火之蛋) floor=7; remote=RELIC.MOLTEN_EGG (熔火之蛋) floor=7
+    floor
+      local: 7
+      remote: 7
+    props
+      local: <none>
+      remote: <none>
+  04: local=RELIC.TOXIC_EGG (毒素之蛋) floor=7; remote=RELIC.TOXIC_EGG (毒素之蛋) floor=7
+    floor
+      local: 7
+      remote: 7
+    props
+      local: <none>
+      remote: <none>
+  05: local=RELIC.ICE_CREAM (冰淇淋) floor=7; remote=RELIC.ICE_CREAM (冰淇淋) floor=7
+    floor
+      local: 7
+      remote: 7
+    props
+      local: <none>
+      remote: <none>
+  06: local=RELIC.POTION_BELT (药水腰带) floor=7; remote=RELIC.POTION_BELT (药水腰带) floor=7
+    floor
+      local: 7
+      remote: 7
+    props
+      local: <none>
+      remote: <none>
+  07: local=RELIC.MUMMIFIED_HAND (干瘪之手) floor=9; remote=RELIC.MUMMIFIED_HAND (干瘪之手) floor=9
+    floor
+      local: 9
+      remote: 9
+    props
+      local: <none>
+      remote: <none>
+  08: local=RELIC.AKABEKO (赤牛) floor=10; remote=RELIC.AKABEKO (赤牛) floor=10
+    floor
+      local: 10
+      remote: 10
+    props
+      local: <none>
+      remote: <none>
+  09: local=RELIC.BRIMSTONE (硫磺) floor=11; remote=RELIC.BRIMSTONE (硫磺) floor=11
+    floor
+      local: 11
+      remote: 11
+    props
+      local: <none>
+      remote: <none>
+  10: local=RELIC.REGAL_PILLOW (皇家枕头) floor=11; remote=RELIC.REGAL_PILLOW (皇家枕头) floor=11
+    floor
+      local: 11
+      remote: 11
+    props
+      local: <none>
+      remote: <none>
+  11: local=RELIC.GAME_PIECE (棋子) floor=11; remote=RELIC.GAME_PIECE (棋子) floor=11
+    floor
+      local: 11
+      remote: 11
+    props
+      local: <none>
+      remote: <none>
+  12: local=RELIC.CENTENNIAL_PUZZLE (百年积木) floor=13; remote=RELIC.CENTENNIAL_PUZZLE (百年积木) floor=13
+    floor
+      local: 13
+      remote: 13
+    props
+      local: <none>
+      remote: <none>
+players[0].orbs: local=<empty>; remote=<empty>
+players[0].piles.count: local=5; remote=5
+players[0].piles.Discard
+  Local: 0 card(s); remote: 0 card(s); first mismatch: <none>.
+players[0].piles.Draw
+  Local: 7 card(s); remote: 7 card(s); first mismatch: index 00.
+  00: local=CARD.BLOODLETTING (放血) +1 floor=3; remote=CARD.BLOODLETTING (放血) +1 floor=3
+    upgrade
+      local: 1
+      remote: 1
+    floor
+      local: 3
+      remote: 3
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  01: local=CARD.BATTLE_TRANCE (战斗专注) +1 floor=5; remote=CARD.BATTLE_TRANCE (战斗专注) +1 floor=5
+    upgrade
+      local: 1
+      remote: 1
+    floor
+      local: 5
+      remote: 5
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  02: local=CARD.STRIKE_IRONCLAD (打击) +1 floor=1; remote=CARD.STRIKE_IRONCLAD (打击) +1 floor=1
+    upgrade
+      local: 1
+      remote: 1
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  03: local=CARD.DEFEND_IRONCLAD (防御) +1 floor=1; remote=CARD.DEFEND_IRONCLAD (防御) +1 floor=1
+    upgrade
+      local: 1
+      remote: 1
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  04: local=CARD.ARMAMENTS (武装) +1 floor=14; remote=CARD.ARMAMENTS (武装) +1 floor=14
+    upgrade
+      local: 1
+      remote: 1
+    floor
+      local: 14
+      remote: 14
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  05: local=CARD.BLOODLETTING (放血) floor=6; remote=CARD.BLOODLETTING (放血) floor=6
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 6
+      remote: 6
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  06: local=CARD.STRIKE_IRONCLAD (打击) floor=1; remote=CARD.STRIKE_IRONCLAD (打击) floor=1
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+players[0].piles.Exhaust
+  Local: 1 card(s); remote: 1 card(s); first mismatch: index 00.
+  00: local=CARD.ASCENDERS_BANE (进阶之灾) floor=1 keywords=Ethereal, Unplayable, Eternal; remote=CARD.ASCENDERS_BANE (进阶之灾) floor=1 keywords=Ethereal, Unplayable, Eternal
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: Ethereal, Unplayable, Eternal
+      remote: Ethereal, Unplayable, Eternal
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+players[0].piles.Hand
+  Local: 6 card(s); remote: 6 card(s); first mismatch: index 00.
+  00: local=CARD.DEFEND_IRONCLAD (防御) floor=1; remote=CARD.DEFEND_IRONCLAD (防御) floor=1
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  01: local=CARD.DEFEND_IRONCLAD (防御) floor=1; remote=CARD.DEFEND_IRONCLAD (防御) floor=1
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  02: local=CARD.STRIKE_IRONCLAD (打击) floor=1; remote=CARD.STRIKE_IRONCLAD (打击) floor=1
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  03: local=CARD.BLUDGEON (重锤) floor=2; remote=CARD.BLUDGEON (重锤) floor=2
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 2
+      remote: 2
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  04: local=CARD.VOLLEY (连射) +1 floor=11; remote=CARD.VOLLEY (连射) +1 floor=11
+    upgrade
+      local: 1
+      remote: 1
+    floor
+      local: 11
+      remote: 11
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  05: local=CARD.BASH (痛击) floor=1; remote=CARD.BASH (痛击) floor=1
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+players[0].piles.Play
+  Local: 0 card(s); remote: 0 card(s); first mismatch: <none>.
+players[1].playerId: local=76561199728860466; remote=76561199728860466
+players[1].character: local=CHARACTER.IRONCLAD (铁甲战士); remote=CHARACTER.IRONCLAD (铁甲战士)
+players[1].turnNumber: local=2; remote=2
+players[1].phase: local=Play; remote=Play
+players[1].energy: local=0; remote=0
+players[1].stars: local=0; remote=0
+players[1].maxPotionCount: local=4; remote=4
+players[1].gold: local=9097; remote=9097
+players[1].potions: local=POTION.TOUCH_OF_INSANITY (癫狂之触), POTION.POTION_OF_BINDING (缚魂药水), POTION.ENERGY_POTION (能量药水), POTION.WEAK_POTION (虚弱药水); remote=POTION.TOUCH_OF_INSANITY (癫狂之触), POTION.POTION_OF_BINDING (缚魂药水), POTION.ENERGY_POTION (能量药水), POTION.WEAK_POTION (虚弱药水)
+players[1].relics
+  Local: 13 item(s); remote: 13 item(s); first mismatch: index 00.
+  00: local=RELIC.BURNING_BLOOD (燃烧之血) floor=1; remote=RELIC.BURNING_BLOOD (燃烧之血) floor=1
+    floor
+      local: 1
+      remote: 1
+    props
+      local: <none>
+      remote: <none>
+  01: local=RELIC.LEAFY_POULTICE (树叶药膏) floor=1; remote=RELIC.LEAFY_POULTICE (树叶药膏) floor=1
+    floor
+      local: 1
+      remote: 1
+    props
+      local: <none>
+      remote: <none>
+  02: local=RELIC.FROZEN_EGG (冻结之蛋) floor=7; remote=RELIC.FROZEN_EGG (冻结之蛋) floor=7
+    floor
+      local: 7
+      remote: 7
+    props
+      local: <none>
+      remote: <none>
+  03: local=RELIC.MOLTEN_EGG (熔火之蛋) floor=7; remote=RELIC.MOLTEN_EGG (熔火之蛋) floor=7
+    floor
+      local: 7
+      remote: 7
+    props
+      local: <none>
+      remote: <none>
+  04: local=RELIC.TOXIC_EGG (毒素之蛋) floor=7; remote=RELIC.TOXIC_EGG (毒素之蛋) floor=7
+    floor
+      local: 7
+      remote: 7
+    props
+      local: <none>
+      remote: <none>
+  05: local=RELIC.ICE_CREAM (冰淇淋) floor=7; remote=RELIC.ICE_CREAM (冰淇淋) floor=7
+    floor
+      local: 7
+      remote: 7
+    props
+      local: <none>
+      remote: <none>
+  06: local=RELIC.POTION_BELT (药水腰带) floor=7; remote=RELIC.POTION_BELT (药水腰带) floor=7
+    floor
+      local: 7
+      remote: 7
+    props
+      local: <none>
+      remote: <none>
+  07: local=RELIC.VENERABLE_TEA_SET (古茶具套装) floor=9; remote=RELIC.VENERABLE_TEA_SET (古茶具套装) floor=9
+    floor
+      local: 9
+      remote: 9
+    props.GainEnergyInNextCombat
+      local: False
+      remote: False
+  08: local=RELIC.BOOK_OF_FIVE_RINGS (五轮书) floor=10; remote=RELIC.BOOK_OF_FIVE_RINGS (五轮书) floor=10
+    floor
+      local: 10
+      remote: 10
+    props.CardsAdded
+      local: 7
+      remote: 7
+  09: local=RELIC.TOOLBOX (工具箱) floor=11; remote=RELIC.TOOLBOX (工具箱) floor=11
+    floor
+      local: 11
+      remote: 11
+    props
+      local: <none>
+      remote: <none>
+  10: local=RELIC.HAPPY_FLOWER (开心小花) floor=11; remote=RELIC.HAPPY_FLOWER (开心小花) floor=11
+    floor
+      local: 11
+      remote: 11
+    props.TurnsSeen
+      local: 0
+      remote: 0
+  11: local=RELIC.BAG_OF_PREPARATION (准备背包) floor=11; remote=RELIC.BAG_OF_PREPARATION (准备背包) floor=11
+    floor
+      local: 11
+      remote: 11
+    props
+      local: <none>
+      remote: <none>
+  12: local=RELIC.PLANISPHERE (活动星图) floor=13; remote=RELIC.PLANISPHERE (活动星图) floor=13
+    floor
+      local: 13
+      remote: 13
+    props
+      local: <none>
+      remote: <none>
+players[1].orbs: local=<empty>; remote=<empty>
+players[1].piles.count: local=5; remote=5
+players[1].piles.Discard
+  Local: 10 card(s); remote: 9 card(s); first mismatch: index 00.
+  00: local=CARD.UNRELENTING (无情猛攻) +1 floor=10; remote=CARD.UNRELENTING (无情猛攻) +1 floor=10
+    upgrade
+      local: 1
+      remote: 1
+    floor
+      local: 10
+      remote: 10
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  01: local=CARD.UPPERCUT (上勾拳) +1 floor=14; remote=CARD.UPPERCUT (上勾拳) +1 floor=14
+    upgrade
+      local: 1
+      remote: 1
+    floor
+      local: 14
+      remote: 14
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  02: local=CARD.DEFEND_IRONCLAD (防御) floor=1; remote=CARD.DEFEND_IRONCLAD (防御) floor=1
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  03: local=CARD.IMPERVIOUS (岿然不动) floor=6 keywords=Exhaust; remote=CARD.IMPERVIOUS (岿然不动) floor=6 keywords=Exhaust
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 6
+      remote: 6
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: Exhaust
+      remote: Exhaust
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  04: local=CARD.BASH (痛击) floor=1; remote=CARD.BASH (痛击) floor=1
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  05: local=CARD.STRIKE_IRONCLAD (打击) floor=1; remote=CARD.STRIKE_IRONCLAD (打击) floor=1
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  06: local=CARD.BLOODLETTING (放血) floor=2; remote=CARD.BLOODLETTING (放血) floor=2
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 2
+      remote: 2
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  07: local=CARD.THUNDERCLAP (闪电霹雳); remote=CARD.THUNDERCLAP (闪电霹雳)
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: <none>
+      remote: <none>
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  08: local=CARD.STRIKE_IRONCLAD (打击) floor=1; remote=CARD.STRIKE_IRONCLAD (打击) floor=1
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  09: local=CARD.WHIRLWIND (旋风斩) +1 floor=7; remote=Missing
+players[1].piles.Draw
+  Local: 3 card(s); remote: 3 card(s); first mismatch: index 00.
+  00: local=CARD.BLUDGEON (重锤) +1 floor=11; remote=CARD.BLUDGEON (重锤) +1 floor=11
+    upgrade
+      local: 1
+      remote: 1
+    floor
+      local: 11
+      remote: 11
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  01: local=CARD.PERFECTED_STRIKE (完美打击) +1 floor=3; remote=CARD.PERFECTED_STRIKE (完美打击) +1 floor=3
+    upgrade
+      local: 1
+      remote: 1
+    floor
+      local: 3
+      remote: 3
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  02: local=CARD.HAVOC (破灭) +1 floor=1 cost=0; remote=CARD.HAVOC (破灭) +1 floor=1 cost=0
+    upgrade
+      local: 1
+      remote: 1
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: 0
+      remote: 0
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+players[1].piles.Exhaust
+  Local: 2 card(s); remote: 2 card(s); first mismatch: index 00.
+  00: local=CARD.SHOCKWAVE (震荡波) keywords=Exhaust; remote=CARD.SHOCKWAVE (震荡波) keywords=Exhaust
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: <none>
+      remote: <none>
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: Exhaust
+      remote: Exhaust
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  01: local=CARD.INFERNAL_BLADE (地狱之刃) +1 floor=11 cost=0 keywords=Exhaust; remote=CARD.INFERNAL_BLADE (地狱之刃) +1 floor=11 cost=0 keywords=Exhaust
+    upgrade
+      local: 1
+      remote: 1
+    floor
+      local: 11
+      remote: 11
+    energyCost
+      local: 0
+      remote: 0
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: Exhaust
+      remote: Exhaust
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+players[1].piles.Hand
+  Local: 9 card(s); remote: 9 card(s); first mismatch: index 00.
+  00: local=CARD.DEFEND_IRONCLAD (防御) floor=1; remote=CARD.DEFEND_IRONCLAD (防御) floor=1
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  01: local=CARD.BLOODLETTING (放血) +1 floor=11; remote=CARD.BLOODLETTING (放血) +1 floor=11
+    upgrade
+      local: 1
+      remote: 1
+    floor
+      local: 11
+      remote: 11
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  02: local=CARD.DEFEND_IRONCLAD (防御) floor=1; remote=CARD.DEFEND_IRONCLAD (防御) floor=1
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  03: local=CARD.VICIOUS (凶恶) +1 floor=11; remote=CARD.VICIOUS (凶恶) +1 floor=11
+    upgrade
+      local: 1
+      remote: 1
+    floor
+      local: 11
+      remote: 11
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  04: local=CARD.FLAME_BARRIER (火焰屏障) +1 floor=13; remote=CARD.FLAME_BARRIER (火焰屏障) +1 floor=13
+    upgrade
+      local: 1
+      remote: 1
+    floor
+      local: 13
+      remote: 13
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  05: local=CARD.RUPTURE (撕裂) +1 floor=1; remote=CARD.RUPTURE (撕裂) +1 floor=1
+    upgrade
+      local: 1
+      remote: 1
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  06: local=CARD.STRIKE_IRONCLAD (打击) floor=1; remote=CARD.STRIKE_IRONCLAD (打击) floor=1
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: 
+      remote: 
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  07: local=CARD.ASCENDERS_BANE (进阶之灾) floor=1 keywords=Ethereal, Unplayable, Eternal; remote=CARD.ASCENDERS_BANE (进阶之灾) floor=1 keywords=Ethereal, Unplayable, Eternal
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 1
+      remote: 1
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: Ethereal, Unplayable, Eternal
+      remote: Ethereal, Unplayable, Eternal
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+  08: local=CARD.MOLTEN_FIST (熔融之拳) floor=5 keywords=Exhaust; remote=CARD.MOLTEN_FIST (熔融之拳) floor=5 keywords=Exhaust
+    upgrade
+      local: 0
+      remote: 0
+    floor
+      local: 5
+      remote: 5
+    energyCost
+      local: <none>
+      remote: <none>
+    affliction.id
+      local: <none>
+      remote: <none>
+    affliction.count
+      local: 0
+      remote: 0
+    keywords
+      local: Exhaust
+      remote: Exhaust
+    enchantment
+      local: <none>
+      remote: <none>
+    props
+      local: <none>
+      remote: <none>
+players[1].piles.Play
+  Local: 0 card(s); remote: 1 card(s); first mismatch: index 00.
+  00: local=Missing; remote=CARD.WHIRLWIND (旋风斩) +1 floor=7
+
+RNG
+---
+Run and player RNG seeds and counters.
+rng.run.seed: local=82621QGV9S; remote=82621QGV9S
+rng.run.counters.CombatCardGeneration: local=276; remote=276
+rng.run.counters.CombatCardSelection: local=7; remote=7
+rng.run.counters.CombatEnergyCosts: local=0; remote=0
+rng.run.counters.CombatOrbs: local=0; remote=0
+rng.run.counters.CombatPotionGeneration: local=0; remote=0
+rng.run.counters.CombatTargets: local=26; remote=26
+rng.run.counters.MonsterAi: local=4; remote=4
+rng.run.counters.Niche: local=15; remote=15
+rng.run.counters.Shuffle: local=310; remote=310
+rng.run.counters.TreasureRoomRelics: local=2; remote=2
+rng.run.counters.UnknownMapPoint: local=1; remote=1
+rng.run.counters.UpFront: local=532; remote=532
+players[0].rng.seed: local=3814926937; remote=3814926937
+players[0].rng.counters.Transformations: local=0; remote=0
+players[1].rng.seed: local=3814926938; remote=3814926938
+players[1].rng.counters.Transformations: local=2; remote=2
+
+Relic grab bags
+---------------
+Remaining relic pools by rarity.
+players[0].relicGrabBag.Common: local=RELIC.FESTIVE_POPPER (节日拉炮), RELIC.ODDLY_SMOOTH_STONE (意外光滑的石头), RELIC.RED_SKULL (红头骨), RELIC.ANCHOR (锚), RELIC.LANTERN (灯笼), RELIC.WHETSTONE (磨刀石), RELIC.AMETHYST_AUBERGINE (紫水晶茄子), RELIC.JUZU_BRACELET (佛珠手链), RELIC.HAPPY_FLOWER (开心小花), RELIC.MEAL_TICKET (餐券), RELIC.RED_MASK (红面具), RELIC.BAG_OF_MARBLES (弹珠袋), RELIC.GORGET (护喉甲), RELIC.WAR_PAINT (战纹涂料), RELIC.VAJRA (金刚杵), RELIC.BOOK_OF_FIVE_RINGS (五轮书), RELIC.STRAWBERRY (草莓), RELIC.PENDULUM (摆动球), RELIC.BLOOD_VIAL (小血瓶), RELIC.BRONZE_SCALES (铜质鳞片), RELIC.BAG_OF_PREPARATION (准备背包), RELIC.STRIKE_DUMMY (打击木偶); remote=RELIC.FESTIVE_POPPER (节日拉炮), RELIC.ODDLY_SMOOTH_STONE (意外光滑的石头), RELIC.RED_SKULL (红头骨), RELIC.ANCHOR (锚), RELIC.LANTERN (灯笼), RELIC.WHETSTONE (磨刀石), RELIC.AMETHYST_AUBERGINE (紫水晶茄子), RELIC.JUZU_BRACELET (佛珠手链), RELIC.HAPPY_FLOWER (开心小花), RELIC.MEAL_TICKET (餐券), RELIC.RED_MASK (红面具), RELIC.BAG_OF_MARBLES (弹珠袋), RELIC.GORGET (护喉甲), RELIC.WAR_PAINT (战纹涂料), RELIC.VAJRA (金刚杵), RELIC.BOOK_OF_FIVE_RINGS (五轮书), RELIC.STRAWBERRY (草莓), RELIC.PENDULUM (摆动球), RELIC.BLOOD_VIAL (小血瓶), RELIC.BRONZE_SCALES (铜质鳞片), RELIC.BAG_OF_PREPARATION (准备背包), RELIC.STRIKE_DUMMY (打击木偶)
+players[0].relicGrabBag.Rare: local=RELIC.BELLOWS (风箱), RELIC.CHANDELIER (吊灯), RELIC.MEAT_ON_THE_BONE (带骨肉), RELIC.SHOVEL (铲子), RELIC.STONE_CALENDAR (历石), RELIC.OLD_COIN (古钱币), RELIC.UNCEASING_TOP (不休陀螺), RELIC.GAMBLING_CHIP (赌博筹码), RELIC.CAPTAINS_WHEEL (舵盘), RELIC.UNSETTLING_LAMP (不安油灯), RELIC.GIRYA (壶铃), RELIC.CHARONS_ASHES (卡戎之灰), RELIC.ART_OF_WAR (孙子兵法), RELIC.WHITE_STAR (白星), RELIC.MANGO (芒果), RELIC.RAINBOW_RING (彩虹戒指), RELIC.VEXING_PUZZLEBOX (烦人机关盒), RELIC.TUNGSTEN_ROD (钨合金棍), RELIC.KUNAI (苦无), RELIC.WHITE_BEAST_STATUE (白兽雕像), RELIC.THE_COURIER (送货员), RELIC.RUINED_HELMET (损毁头盔), RELIC.STURDY_CLAMP (坚固钳子), RELIC.CLOAK_CLASP (斗篷扣), RELIC.DEMON_TONGUE (恶魔之舌), RELIC.BEATING_REMNANT (律动残余), RELIC.INTIMIDATING_HELMET (骇人头盔), RELIC.SHURIKEN (手里剑), RELIC.RAZOR_TOOTH (剃刀牙), RELIC.POCKETWATCH (怀表), RELIC.PRAYER_WHEEL (转经轮), RELIC.LIZARD_TAIL (蜥蜴尾巴); remote=RELIC.BELLOWS (风箱), RELIC.CHANDELIER (吊灯), RELIC.MEAT_ON_THE_BONE (带骨肉), RELIC.SHOVEL (铲子), RELIC.STONE_CALENDAR (历石), RELIC.OLD_COIN (古钱币), RELIC.UNCEASING_TOP (不休陀螺), RELIC.GAMBLING_CHIP (赌博筹码), RELIC.CAPTAINS_WHEEL (舵盘), RELIC.UNSETTLING_LAMP (不安油灯), RELIC.GIRYA (壶铃), RELIC.CHARONS_ASHES (卡戎之灰), RELIC.ART_OF_WAR (孙子兵法), RELIC.WHITE_STAR (白星), RELIC.MANGO (芒果), RELIC.RAINBOW_RING (彩虹戒指), RELIC.VEXING_PUZZLEBOX (烦人机关盒), RELIC.TUNGSTEN_ROD (钨合金棍), RELIC.KUNAI (苦无), RELIC.WHITE_BEAST_STATUE (白兽雕像), RELIC.THE_COURIER (送货员), RELIC.RUINED_HELMET (损毁头盔), RELIC.STURDY_CLAMP (坚固钳子), RELIC.CLOAK_CLASP (斗篷扣), RELIC.DEMON_TONGUE (恶魔之舌), RELIC.BEATING_REMNANT (律动残余), RELIC.INTIMIDATING_HELMET (骇人头盔), RELIC.SHURIKEN (手里剑), RELIC.RAZOR_TOOTH (剃刀牙), RELIC.POCKETWATCH (怀表), RELIC.PRAYER_WHEEL (转经轮), RELIC.LIZARD_TAIL (蜥蜴尾巴)
+players[0].relicGrabBag.Shop: local=RELIC.DOLLYS_MIRROR (多利之镜), RELIC.BURNING_STICKS (燃烧木棍), RELIC.DINGY_RUG (肮脏地毯), RELIC.BREAD (面包), RELIC.SCREAMING_FLAGON (尖叫酒壶), RELIC.GHOST_SEED (幽灵种子), RELIC.THE_ABACUS (算盘), RELIC.TOOLBOX (工具箱), RELIC.MYSTIC_LIGHTER (神秘打火机), RELIC.DRAGON_FRUIT (火龙果), RELIC.BELT_BUCKLE (腰带扣), RELIC.CHEMICAL_X (化学物X), RELIC.MINIATURE_TENT (微型帐篷), RELIC.GNARLED_HAMMER (扭曲锤子), RELIC.MEMBERSHIP_CARD (会员卡), RELIC.CAULDRON (大锅), RELIC.KIFUDA (木札), RELIC.ORRERY (星系仪), RELIC.SLING_OF_COURAGE (勇气投石索), RELIC.PUNCH_DAGGER (拳刃), RELIC.RINGING_TRIANGLE (三角铃鼓), RELIC.ROYAL_STAMP (王室印章), RELIC.LEES_WAFFLE (李家华夫饼), RELIC.LAVA_LAMP (熔岩灯), RELIC.WING_CHARM (羽翼护符); remote=RELIC.DOLLYS_MIRROR (多利之镜), RELIC.BURNING_STICKS (燃烧木棍), RELIC.DINGY_RUG (肮脏地毯), RELIC.BREAD (面包), RELIC.SCREAMING_FLAGON (尖叫酒壶), RELIC.GHOST_SEED (幽灵种子), RELIC.THE_ABACUS (算盘), RELIC.TOOLBOX (工具箱), RELIC.MYSTIC_LIGHTER (神秘打火机), RELIC.DRAGON_FRUIT (火龙果), RELIC.BELT_BUCKLE (腰带扣), RELIC.CHEMICAL_X (化学物X), RELIC.MINIATURE_TENT (微型帐篷), RELIC.GNARLED_HAMMER (扭曲锤子), RELIC.MEMBERSHIP_CARD (会员卡), RELIC.CAULDRON (大锅), RELIC.KIFUDA (木札), RELIC.ORRERY (星系仪), RELIC.SLING_OF_COURAGE (勇气投石索), RELIC.PUNCH_DAGGER (拳刃), RELIC.RINGING_TRIANGLE (三角铃鼓), RELIC.ROYAL_STAMP (王室印章), RELIC.LEES_WAFFLE (李家华夫饼), RELIC.LAVA_LAMP (熔岩灯), RELIC.WING_CHARM (羽翼护符)
+players[0].relicGrabBag.Uncommon: local=RELIC.GREMLIN_HORN (地精之角), RELIC.LUCKY_FYSH (招财异鱼), RELIC.PETRIFIED_TOAD (石化蟾蜍), RELIC.JOSS_PAPER (金纸), RELIC.CANDELABRA (烛台), RELIC.PEN_NIB (钢笔尖), RELIC.VAMBRACE (臂甲), RELIC.LASTING_CANDY (吃不完的糖), RELIC.TINY_MAILBOX (小邮箱), RELIC.KUSARIGAMA (锁镰), RELIC.TUNING_FORK (音叉), RELIC.LETTER_OPENER (开信刀), RELIC.MINIATURE_CANNON (微型大炮), RELIC.HORN_CLEAT (船夹板), RELIC.PEAR (梨子), RELIC.BOWLER_HAT (圆顶礼帽), RELIC.ORICHALCUM (奥利哈钢), RELIC.RIPPLE_BASIN (波纹水盆), RELIC.ETERNAL_FEATHER (永恒羽毛), RELIC.PAPER_PHROG (纸蛙), RELIC.MERCURY_HOURGLASS (水银沙漏), RELIC.REPTILE_TRINKET (爬行动物饰品), RELIC.SPARKLING_ROUGE (闪亮口红), RELIC.PLANISPHERE (活动星图), RELIC.ORNAMENTAL_FAN (精致折扇), RELIC.SELF_FORMING_CLAY (自成型黏土), RELIC.PERMAFROST (永冻冰晶), RELIC.PARRYING_SHIELD (招架盾), RELIC.NUNCHAKU (双截棍), RELIC.PANTOGRAPH (缩放仪), RELIC.STONE_CRACKER (碎石钻); remote=RELIC.GREMLIN_HORN (地精之角), RELIC.LUCKY_FYSH (招财异鱼), RELIC.PETRIFIED_TOAD (石化蟾蜍), RELIC.JOSS_PAPER (金纸), RELIC.CANDELABRA (烛台), RELIC.PEN_NIB (钢笔尖), RELIC.VAMBRACE (臂甲), RELIC.LASTING_CANDY (吃不完的糖), RELIC.TINY_MAILBOX (小邮箱), RELIC.KUSARIGAMA (锁镰), RELIC.TUNING_FORK (音叉), RELIC.LETTER_OPENER (开信刀), RELIC.MINIATURE_CANNON (微型大炮), RELIC.HORN_CLEAT (船夹板), RELIC.PEAR (梨子), RELIC.BOWLER_HAT (圆顶礼帽), RELIC.ORICHALCUM (奥利哈钢), RELIC.RIPPLE_BASIN (波纹水盆), RELIC.ETERNAL_FEATHER (永恒羽毛), RELIC.PAPER_PHROG (纸蛙), RELIC.MERCURY_HOURGLASS (水银沙漏), RELIC.REPTILE_TRINKET (爬行动物饰品), RELIC.SPARKLING_ROUGE (闪亮口红), RELIC.PLANISPHERE (活动星图), RELIC.ORNAMENTAL_FAN (精致折扇), RELIC.SELF_FORMING_CLAY (自成型黏土), RELIC.PERMAFROST (永冻冰晶), RELIC.PARRYING_SHIELD (招架盾), RELIC.NUNCHAKU (双截棍), RELIC.PANTOGRAPH (缩放仪), RELIC.STONE_CRACKER (碎石钻)
+players[1].relicGrabBag.Common: local=RELIC.RED_SKULL (红头骨), RELIC.JUZU_BRACELET (佛珠手链), RELIC.REGAL_PILLOW (皇家枕头), RELIC.MEAL_TICKET (餐券), RELIC.PENDULUM (摆动球), RELIC.STRAWBERRY (草莓), RELIC.BAG_OF_MARBLES (弹珠袋), RELIC.FESTIVE_POPPER (节日拉炮), RELIC.AMETHYST_AUBERGINE (紫水晶茄子), RELIC.ANCHOR (锚), RELIC.BRONZE_SCALES (铜质鳞片), RELIC.ODDLY_SMOOTH_STONE (意外光滑的石头), RELIC.RED_MASK (红面具), RELIC.WHETSTONE (磨刀石), RELIC.BLOOD_VIAL (小血瓶), RELIC.WAR_PAINT (战纹涂料), RELIC.CENTENNIAL_PUZZLE (百年积木), RELIC.STRIKE_DUMMY (打击木偶), RELIC.VAJRA (金刚杵), RELIC.GORGET (护喉甲), RELIC.LANTERN (灯笼); remote=RELIC.RED_SKULL (红头骨), RELIC.JUZU_BRACELET (佛珠手链), RELIC.REGAL_PILLOW (皇家枕头), RELIC.MEAL_TICKET (餐券), RELIC.PENDULUM (摆动球), RELIC.STRAWBERRY (草莓), RELIC.BAG_OF_MARBLES (弹珠袋), RELIC.FESTIVE_POPPER (节日拉炮), RELIC.AMETHYST_AUBERGINE (紫水晶茄子), RELIC.ANCHOR (锚), RELIC.BRONZE_SCALES (铜质鳞片), RELIC.ODDLY_SMOOTH_STONE (意外光滑的石头), RELIC.RED_MASK (红面具), RELIC.WHETSTONE (磨刀石), RELIC.BLOOD_VIAL (小血瓶), RELIC.WAR_PAINT (战纹涂料), RELIC.CENTENNIAL_PUZZLE (百年积木), RELIC.STRIKE_DUMMY (打击木偶), RELIC.VAJRA (金刚杵), RELIC.GORGET (护喉甲), RELIC.LANTERN (灯笼)
+players[1].relicGrabBag.Rare: local=RELIC.POCKETWATCH (怀表), RELIC.CLOAK_CLASP (斗篷扣), RELIC.BELLOWS (风箱), RELIC.WHITE_STAR (白星), RELIC.STURDY_CLAMP (坚固钳子), RELIC.THE_COURIER (送货员), RELIC.SHOVEL (铲子), RELIC.UNCEASING_TOP (不休陀螺), RELIC.GAMBLING_CHIP (赌博筹码), RELIC.LIZARD_TAIL (蜥蜴尾巴), RELIC.CAPTAINS_WHEEL (舵盘), RELIC.RAZOR_TOOTH (剃刀牙), RELIC.CHANDELIER (吊灯), RELIC.SHURIKEN (手里剑), RELIC.STONE_CALENDAR (历石), RELIC.DEMON_TONGUE (恶魔之舌), RELIC.PRAYER_WHEEL (转经轮), RELIC.TUNGSTEN_ROD (钨合金棍), RELIC.MANGO (芒果), RELIC.CHARONS_ASHES (卡戎之灰), RELIC.MEAT_ON_THE_BONE (带骨肉), RELIC.VEXING_PUZZLEBOX (烦人机关盒), RELIC.GAME_PIECE (棋子), RELIC.UNSETTLING_LAMP (不安油灯), RELIC.RAINBOW_RING (彩虹戒指), RELIC.INTIMIDATING_HELMET (骇人头盔), RELIC.GIRYA (壶铃), RELIC.OLD_COIN (古钱币), RELIC.RUINED_HELMET (损毁头盔), RELIC.WHITE_BEAST_STATUE (白兽雕像), RELIC.ART_OF_WAR (孙子兵法), RELIC.BEATING_REMNANT (律动残余), RELIC.KUNAI (苦无); remote=RELIC.POCKETWATCH (怀表), RELIC.CLOAK_CLASP (斗篷扣), RELIC.BELLOWS (风箱), RELIC.WHITE_STAR (白星), RELIC.STURDY_CLAMP (坚固钳子), RELIC.THE_COURIER (送货员), RELIC.SHOVEL (铲子), RELIC.UNCEASING_TOP (不休陀螺), RELIC.GAMBLING_CHIP (赌博筹码), RELIC.LIZARD_TAIL (蜥蜴尾巴), RELIC.CAPTAINS_WHEEL (舵盘), RELIC.RAZOR_TOOTH (剃刀牙), RELIC.CHANDELIER (吊灯), RELIC.SHURIKEN (手里剑), RELIC.STONE_CALENDAR (历石), RELIC.DEMON_TONGUE (恶魔之舌), RELIC.PRAYER_WHEEL (转经轮), RELIC.TUNGSTEN_ROD (钨合金棍), RELIC.MANGO (芒果), RELIC.CHARONS_ASHES (卡戎之灰), RELIC.MEAT_ON_THE_BONE (带骨肉), RELIC.VEXING_PUZZLEBOX (烦人机关盒), RELIC.GAME_PIECE (棋子), RELIC.UNSETTLING_LAMP (不安油灯), RELIC.RAINBOW_RING (彩虹戒指), RELIC.INTIMIDATING_HELMET (骇人头盔), RELIC.GIRYA (壶铃), RELIC.OLD_COIN (古钱币), RELIC.RUINED_HELMET (损毁头盔), RELIC.WHITE_BEAST_STATUE (白兽雕像), RELIC.ART_OF_WAR (孙子兵法), RELIC.BEATING_REMNANT (律动残余), RELIC.KUNAI (苦无)
+players[1].relicGrabBag.Shop: local=RELIC.ORRERY (星系仪), RELIC.ROYAL_STAMP (王室印章), RELIC.SCREAMING_FLAGON (尖叫酒壶), RELIC.KIFUDA (木札), RELIC.PUNCH_DAGGER (拳刃), RELIC.BELT_BUCKLE (腰带扣), RELIC.LEES_WAFFLE (李家华夫饼), RELIC.GNARLED_HAMMER (扭曲锤子), RELIC.LAVA_LAMP (熔岩灯), RELIC.DRAGON_FRUIT (火龙果), RELIC.WING_CHARM (羽翼护符), RELIC.DOLLYS_MIRROR (多利之镜), RELIC.BURNING_STICKS (燃烧木棍), RELIC.SLING_OF_COURAGE (勇气投石索), RELIC.THE_ABACUS (算盘), RELIC.BREAD (面包), RELIC.RINGING_TRIANGLE (三角铃鼓), RELIC.CAULDRON (大锅), RELIC.DINGY_RUG (肮脏地毯), RELIC.MYSTIC_LIGHTER (神秘打火机), RELIC.MINIATURE_TENT (微型帐篷), RELIC.CHEMICAL_X (化学物X), RELIC.GHOST_SEED (幽灵种子), RELIC.BRIMSTONE (硫磺), RELIC.MEMBERSHIP_CARD (会员卡); remote=RELIC.ORRERY (星系仪), RELIC.ROYAL_STAMP (王室印章), RELIC.SCREAMING_FLAGON (尖叫酒壶), RELIC.KIFUDA (木札), RELIC.PUNCH_DAGGER (拳刃), RELIC.BELT_BUCKLE (腰带扣), RELIC.LEES_WAFFLE (李家华夫饼), RELIC.GNARLED_HAMMER (扭曲锤子), RELIC.LAVA_LAMP (熔岩灯), RELIC.DRAGON_FRUIT (火龙果), RELIC.WING_CHARM (羽翼护符), RELIC.DOLLYS_MIRROR (多利之镜), RELIC.BURNING_STICKS (燃烧木棍), RELIC.SLING_OF_COURAGE (勇气投石索), RELIC.THE_ABACUS (算盘), RELIC.BREAD (面包), RELIC.RINGING_TRIANGLE (三角铃鼓), RELIC.CAULDRON (大锅), RELIC.DINGY_RUG (肮脏地毯), RELIC.MYSTIC_LIGHTER (神秘打火机), RELIC.MINIATURE_TENT (微型帐篷), RELIC.CHEMICAL_X (化学物X), RELIC.GHOST_SEED (幽灵种子), RELIC.BRIMSTONE (硫磺), RELIC.MEMBERSHIP_CARD (会员卡)
+players[1].relicGrabBag.Uncommon: local=RELIC.VAMBRACE (臂甲), RELIC.RIPPLE_BASIN (波纹水盆), RELIC.MERCURY_HOURGLASS (水银沙漏), RELIC.SELF_FORMING_CLAY (自成型黏土), RELIC.HORN_CLEAT (船夹板), RELIC.JOSS_PAPER (金纸), RELIC.MINIATURE_CANNON (微型大炮), RELIC.PERMAFROST (永冻冰晶), RELIC.CANDELABRA (烛台), RELIC.ETERNAL_FEATHER (永恒羽毛), RELIC.PARRYING_SHIELD (招架盾), RELIC.REPTILE_TRINKET (爬行动物饰品), RELIC.PANTOGRAPH (缩放仪), RELIC.SPARKLING_ROUGE (闪亮口红), RELIC.STONE_CRACKER (碎石钻), RELIC.LETTER_OPENER (开信刀), RELIC.ORNAMENTAL_FAN (精致折扇), RELIC.LASTING_CANDY (吃不完的糖), RELIC.TUNING_FORK (音叉), RELIC.PEAR (梨子), RELIC.PETRIFIED_TOAD (石化蟾蜍), RELIC.LUCKY_FYSH (招财异鱼), RELIC.GREMLIN_HORN (地精之角), RELIC.AKABEKO (赤牛), RELIC.NUNCHAKU (双截棍), RELIC.BOWLER_HAT (圆顶礼帽), RELIC.PAPER_PHROG (纸蛙), RELIC.ORICHALCUM (奥利哈钢), RELIC.KUSARIGAMA (锁镰), RELIC.PEN_NIB (钢笔尖), RELIC.TINY_MAILBOX (小邮箱); remote=RELIC.VAMBRACE (臂甲), RELIC.RIPPLE_BASIN (波纹水盆), RELIC.MERCURY_HOURGLASS (水银沙漏), RELIC.SELF_FORMING_CLAY (自成型黏土), RELIC.HORN_CLEAT (船夹板), RELIC.JOSS_PAPER (金纸), RELIC.MINIATURE_CANNON (微型大炮), RELIC.PERMAFROST (永冻冰晶), RELIC.CANDELABRA (烛台), RELIC.ETERNAL_FEATHER (永恒羽毛), RELIC.PARRYING_SHIELD (招架盾), RELIC.REPTILE_TRINKET (爬行动物饰品), RELIC.PANTOGRAPH (缩放仪), RELIC.SPARKLING_ROUGE (闪亮口红), RELIC.STONE_CRACKER (碎石钻), RELIC.LETTER_OPENER (开信刀), RELIC.ORNAMENTAL_FAN (精致折扇), RELIC.LASTING_CANDY (吃不完的糖), RELIC.TUNING_FORK (音叉), RELIC.PEAR (梨子), RELIC.PETRIFIED_TOAD (石化蟾蜍), RELIC.LUCKY_FYSH (招财异鱼), RELIC.GREMLIN_HORN (地精之角), RELIC.AKABEKO (赤牛), RELIC.NUNCHAKU (双截棍), RELIC.BOWLER_HAT (圆顶礼帽), RELIC.PAPER_PHROG (纸蛙), RELIC.ORICHALCUM (奥利哈钢), RELIC.KUSARIGAMA (锁镰), RELIC.PEN_NIB (钢笔尖), RELIC.TINY_MAILBOX (小邮箱)
+
+LOCAL STATE DUMP
+Choice IDs: 12,16
+Reward IDs: 10,9
+Last executed action ID: 292
+Last executed hook ID: 
+Creature with monster ID:  player ID: 76561199787554826
+	Current HP: 326 Max HP: 799 Block: 0 Power count: 3
+	Power POWER.STRENGTH_POWER Amount: 8
+	Power POWER.RUPTURE_POWER Amount: 2
+	Power POWER.VICIOUS_POWER Amount: 2
+Creature with monster ID:  player ID: 76561199728860466
+	Current HP: 75 Max HP: 688 Block: 10 Power count: 0
+Creature with monster ID: MONSTER.VANTOM player ID: 
+	Current HP: -282 Max HP: 402 Block: 0 Power count: 3
+	Power POWER.STRENGTH_POWER Amount: 2
+	Power POWER.VULNERABLE_POWER Amount: 7
+	Power POWER.WEAK_POWER Amount: 4
+Player with ID: 76561199787554826 Character: CHARACTER.IRONCLAD
+	Turn: 2 Phase: Play
+	Energy: 0 Stars: 0 Max Potions: 4 Gold: 9243
+	Pile Count: 5 Potion Count: 4 Relic Count: 13 Orb Count: 0
+	Pile Hand
+		Serialized card: SerializableCard CARD.DEFEND_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.DEFEND_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.STRIKE_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.BLUDGEON. Upgrades: 0 Enchantment:  Props:  Floor: 2
+		Serialized card: SerializableCard CARD.VOLLEY. Upgrades: 1 Enchantment:  Props:  Floor: 11
+		Serialized card: SerializableCard CARD.BASH. Upgrades: 0 Enchantment:  Props:  Floor: 1
+	Pile Draw
+		Serialized card: SerializableCard CARD.BLOODLETTING. Upgrades: 1 Enchantment:  Props:  Floor: 3
+		Serialized card: SerializableCard CARD.BATTLE_TRANCE. Upgrades: 1 Enchantment:  Props:  Floor: 5
+		Serialized card: SerializableCard CARD.STRIKE_IRONCLAD. Upgrades: 1 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.DEFEND_IRONCLAD. Upgrades: 1 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.ARMAMENTS. Upgrades: 1 Enchantment:  Props:  Floor: 14
+		Serialized card: SerializableCard CARD.BLOODLETTING. Upgrades: 0 Enchantment:  Props:  Floor: 6
+		Serialized card: SerializableCard CARD.STRIKE_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+	Pile Discard
+	Pile Exhaust
+		Serialized card: SerializableCard CARD.ASCENDERS_BANE. Upgrades: 0 Enchantment:  Props:  Floor: 1
+			Keywords: Ethereal,Unplayable,Eternal
+	Pile Play
+	Potion POTION.FLEX_POTION
+	Potion POTION.FAIRY_IN_A_BOTTLE
+	Potion POTION.POWER_POTION
+	Potion POTION.WEAK_POTION
+	Relic RELIC.BURNING_BLOOD Props:  Floor added: 1
+	Relic RELIC.PRECARIOUS_SHEARS Props:  Floor added: 1
+	Relic RELIC.FROZEN_EGG Props:  Floor added: 7
+	Relic RELIC.MOLTEN_EGG Props:  Floor added: 7
+	Relic RELIC.TOXIC_EGG Props:  Floor added: 7
+	Relic RELIC.ICE_CREAM Props:  Floor added: 7
+	Relic RELIC.POTION_BELT Props:  Floor added: 7
+	Relic RELIC.MUMMIFIED_HAND Props:  Floor added: 9
+	Relic RELIC.AKABEKO Props:  Floor added: 10
+	Relic RELIC.BRIMSTONE Props:  Floor added: 11
+	Relic RELIC.REGAL_PILLOW Props:  Floor added: 11
+	Relic RELIC.GAME_PIECE Props:  Floor added: 11
+	Relic RELIC.CENTENNIAL_PUZZLE Props:  Floor added: 13
+Player RNG seed: 3814926937
+	RNG counter Transformations: 0
+Player relic grab bag:
+	Rarity Common: FESTIVE_POPPER,ODDLY_SMOOTH_STONE,RED_SKULL,ANCHOR,LANTERN,WHETSTONE,AMETHYST_AUBERGINE,JUZU_BRACELET,HAPPY_FLOWER,MEAL_TICKET,RED_MASK,BAG_OF_MARBLES,GORGET,WAR_PAINT,VAJRA,BOOK_OF_FIVE_RINGS,STRAWBERRY,PENDULUM,BLOOD_VIAL,BRONZE_SCALES,BAG_OF_PREPARATION,STRIKE_DUMMY
+	Rarity Uncommon: GREMLIN_HORN,LUCKY_FYSH,PETRIFIED_TOAD,JOSS_PAPER,CANDELABRA,PEN_NIB,VAMBRACE,LASTING_CANDY,TINY_MAILBOX,KUSARIGAMA,TUNING_FORK,LETTER_OPENER,MINIATURE_CANNON,HORN_CLEAT,PEAR,BOWLER_HAT,ORICHALCUM,RIPPLE_BASIN,ETERNAL_FEATHER,PAPER_PHROG,MERCURY_HOURGLASS,REPTILE_TRINKET,SPARKLING_ROUGE,PLANISPHERE,ORNAMENTAL_FAN,SELF_FORMING_CLAY,PERMAFROST,PARRYING_SHIELD,NUNCHAKU,PANTOGRAPH,STONE_CRACKER
+	Rarity Rare: BELLOWS,CHANDELIER,MEAT_ON_THE_BONE,SHOVEL,STONE_CALENDAR,OLD_COIN,UNCEASING_TOP,GAMBLING_CHIP,CAPTAINS_WHEEL,UNSETTLING_LAMP,GIRYA,CHARONS_ASHES,ART_OF_WAR,WHITE_STAR,MANGO,RAINBOW_RING,VEXING_PUZZLEBOX,TUNGSTEN_ROD,KUNAI,WHITE_BEAST_STATUE,THE_COURIER,RUINED_HELMET,STURDY_CLAMP,CLOAK_CLASP,DEMON_TONGUE,BEATING_REMNANT,INTIMIDATING_HELMET,SHURIKEN,RAZOR_TOOTH,POCKETWATCH,PRAYER_WHEEL,LIZARD_TAIL
+	Rarity Shop: DOLLYS_MIRROR,BURNING_STICKS,DINGY_RUG,BREAD,SCREAMING_FLAGON,GHOST_SEED,THE_ABACUS,TOOLBOX,MYSTIC_LIGHTER,DRAGON_FRUIT,BELT_BUCKLE,CHEMICAL_X,MINIATURE_TENT,GNARLED_HAMMER,MEMBERSHIP_CARD,CAULDRON,KIFUDA,ORRERY,SLING_OF_COURAGE,PUNCH_DAGGER,RINGING_TRIANGLE,ROYAL_STAMP,LEES_WAFFLE,LAVA_LAMP,WING_CHARM
+Player with ID: 76561199728860466 Character: CHARACTER.IRONCLAD
+	Turn: 2 Phase: Play
+	Energy: 0 Stars: 0 Max Potions: 4 Gold: 9097
+	Pile Count: 5 Potion Count: 4 Relic Count: 13 Orb Count: 0
+	Pile Hand
+		Serialized card: SerializableCard CARD.DEFEND_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.BLOODLETTING. Upgrades: 1 Enchantment:  Props:  Floor: 11
+		Serialized card: SerializableCard CARD.DEFEND_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.VICIOUS. Upgrades: 1 Enchantment:  Props:  Floor: 11
+		Serialized card: SerializableCard CARD.FLAME_BARRIER. Upgrades: 1 Enchantment:  Props:  Floor: 13
+		Serialized card: SerializableCard CARD.RUPTURE. Upgrades: 1 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.STRIKE_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.ASCENDERS_BANE. Upgrades: 0 Enchantment:  Props:  Floor: 1
+			Keywords: Ethereal,Unplayable,Eternal
+		Serialized card: SerializableCard CARD.MOLTEN_FIST. Upgrades: 0 Enchantment:  Props:  Floor: 5
+			Keywords: Exhaust
+	Pile Draw
+		Serialized card: SerializableCard CARD.BLUDGEON. Upgrades: 1 Enchantment:  Props:  Floor: 11
+		Serialized card: SerializableCard CARD.PERFECTED_STRIKE. Upgrades: 1 Enchantment:  Props:  Floor: 3
+		Serialized card: SerializableCard CARD.HAVOC. Upgrades: 1 Enchantment:  Props:  Floor: 1
+			Energy Cost: 0
+	Pile Discard
+		Serialized card: SerializableCard CARD.UNRELENTING. Upgrades: 1 Enchantment:  Props:  Floor: 10
+		Serialized card: SerializableCard CARD.UPPERCUT. Upgrades: 1 Enchantment:  Props:  Floor: 14
+		Serialized card: SerializableCard CARD.DEFEND_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.IMPERVIOUS. Upgrades: 0 Enchantment:  Props:  Floor: 6
+			Keywords: Exhaust
+		Serialized card: SerializableCard CARD.BASH. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.STRIKE_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.BLOODLETTING. Upgrades: 0 Enchantment:  Props:  Floor: 2
+		Serialized card: SerializableCard CARD.THUNDERCLAP. Upgrades: 0 Enchantment:  Props:  Floor: 
+		Serialized card: SerializableCard CARD.STRIKE_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.WHIRLWIND. Upgrades: 1 Enchantment:  Props:  Floor: 7
+	Pile Exhaust
+		Serialized card: SerializableCard CARD.SHOCKWAVE. Upgrades: 0 Enchantment:  Props:  Floor: 
+			Keywords: Exhaust
+		Serialized card: SerializableCard CARD.INFERNAL_BLADE. Upgrades: 1 Enchantment:  Props:  Floor: 11
+			Keywords: Exhaust
+			Energy Cost: 0
+	Pile Play
+	Potion POTION.TOUCH_OF_INSANITY
+	Potion POTION.POTION_OF_BINDING
+	Potion POTION.ENERGY_POTION
+	Potion POTION.WEAK_POTION
+	Relic RELIC.BURNING_BLOOD Props:  Floor added: 1
+	Relic RELIC.LEAFY_POULTICE Props:  Floor added: 1
+	Relic RELIC.FROZEN_EGG Props:  Floor added: 7
+	Relic RELIC.MOLTEN_EGG Props:  Floor added: 7
+	Relic RELIC.TOXIC_EGG Props:  Floor added: 7
+	Relic RELIC.ICE_CREAM Props:  Floor added: 7
+	Relic RELIC.POTION_BELT Props:  Floor added: 7
+	Relic RELIC.VENERABLE_TEA_SET Props: GainEnergyInNextCombat=False Floor added: 9
+	Relic RELIC.BOOK_OF_FIVE_RINGS Props: CardsAdded=7 Floor added: 10
+	Relic RELIC.TOOLBOX Props:  Floor added: 11
+	Relic RELIC.HAPPY_FLOWER Props: TurnsSeen=0 Floor added: 11
+	Relic RELIC.BAG_OF_PREPARATION Props:  Floor added: 11
+	Relic RELIC.PLANISPHERE Props:  Floor added: 13
+Player RNG seed: 3814926938
+	RNG counter Transformations: 2
+Player relic grab bag:
+	Rarity Common: RED_SKULL,JUZU_BRACELET,REGAL_PILLOW,MEAL_TICKET,PENDULUM,STRAWBERRY,BAG_OF_MARBLES,FESTIVE_POPPER,AMETHYST_AUBERGINE,ANCHOR,BRONZE_SCALES,ODDLY_SMOOTH_STONE,RED_MASK,WHETSTONE,BLOOD_VIAL,WAR_PAINT,CENTENNIAL_PUZZLE,STRIKE_DUMMY,VAJRA,GORGET,LANTERN
+	Rarity Uncommon: VAMBRACE,RIPPLE_BASIN,MERCURY_HOURGLASS,SELF_FORMING_CLAY,HORN_CLEAT,JOSS_PAPER,MINIATURE_CANNON,PERMAFROST,CANDELABRA,ETERNAL_FEATHER,PARRYING_SHIELD,REPTILE_TRINKET,PANTOGRAPH,SPARKLING_ROUGE,STONE_CRACKER,LETTER_OPENER,ORNAMENTAL_FAN,LASTING_CANDY,TUNING_FORK,PEAR,PETRIFIED_TOAD,LUCKY_FYSH,GREMLIN_HORN,AKABEKO,NUNCHAKU,BOWLER_HAT,PAPER_PHROG,ORICHALCUM,KUSARIGAMA,PEN_NIB,TINY_MAILBOX
+	Rarity Rare: POCKETWATCH,CLOAK_CLASP,BELLOWS,WHITE_STAR,STURDY_CLAMP,THE_COURIER,SHOVEL,UNCEASING_TOP,GAMBLING_CHIP,LIZARD_TAIL,CAPTAINS_WHEEL,RAZOR_TOOTH,CHANDELIER,SHURIKEN,STONE_CALENDAR,DEMON_TONGUE,PRAYER_WHEEL,TUNGSTEN_ROD,MANGO,CHARONS_ASHES,MEAT_ON_THE_BONE,VEXING_PUZZLEBOX,GAME_PIECE,UNSETTLING_LAMP,RAINBOW_RING,INTIMIDATING_HELMET,GIRYA,OLD_COIN,RUINED_HELMET,WHITE_BEAST_STATUE,ART_OF_WAR,BEATING_REMNANT,KUNAI
+	Rarity Shop: ORRERY,ROYAL_STAMP,SCREAMING_FLAGON,KIFUDA,PUNCH_DAGGER,BELT_BUCKLE,LEES_WAFFLE,GNARLED_HAMMER,LAVA_LAMP,DRAGON_FRUIT,WING_CHARM,DOLLYS_MIRROR,BURNING_STICKS,SLING_OF_COURAGE,THE_ABACUS,BREAD,RINGING_TRIANGLE,CAULDRON,DINGY_RUG,MYSTIC_LIGHTER,MINIATURE_TENT,CHEMICAL_X,GHOST_SEED,BRIMSTONE,MEMBERSHIP_CARD
+RNG global seed: 82621QGV9S
+	RNG counter UpFront: 532
+	RNG counter Shuffle: 310
+	RNG counter UnknownMapPoint: 1
+	RNG counter CombatCardGeneration: 276
+	RNG counter CombatPotionGeneration: 0
+	RNG counter CombatCardSelection: 7
+	RNG counter CombatEnergyCosts: 0
+	RNG counter CombatTargets: 26
+	RNG counter MonsterAi: 4
+	RNG counter Niche: 15
+	RNG counter CombatOrbs: 0
+	RNG counter TreasureRoomRelics: 2
+
+REMOTE STATE DUMP
+Choice IDs: 12,16
+Reward IDs: 10,9
+Last executed action ID: 292
+Last executed hook ID: 
+Creature with monster ID:  player ID: 76561199787554826
+	Current HP: 326 Max HP: 799 Block: 0 Power count: 3
+	Power POWER.STRENGTH_POWER Amount: 8
+	Power POWER.RUPTURE_POWER Amount: 2
+	Power POWER.VICIOUS_POWER Amount: 2
+Creature with monster ID:  player ID: 76561199728860466
+	Current HP: 75 Max HP: 688 Block: 10 Power count: 0
+Player with ID: 76561199787554826 Character: CHARACTER.IRONCLAD
+	Turn: 2 Phase: Play
+	Energy: 0 Stars: 0 Max Potions: 4 Gold: 9243
+	Pile Count: 5 Potion Count: 4 Relic Count: 13 Orb Count: 0
+	Pile Hand
+		Serialized card: SerializableCard CARD.DEFEND_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.DEFEND_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.STRIKE_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.BLUDGEON. Upgrades: 0 Enchantment:  Props:  Floor: 2
+		Serialized card: SerializableCard CARD.VOLLEY. Upgrades: 1 Enchantment:  Props:  Floor: 11
+		Serialized card: SerializableCard CARD.BASH. Upgrades: 0 Enchantment:  Props:  Floor: 1
+	Pile Draw
+		Serialized card: SerializableCard CARD.BLOODLETTING. Upgrades: 1 Enchantment:  Props:  Floor: 3
+		Serialized card: SerializableCard CARD.BATTLE_TRANCE. Upgrades: 1 Enchantment:  Props:  Floor: 5
+		Serialized card: SerializableCard CARD.STRIKE_IRONCLAD. Upgrades: 1 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.DEFEND_IRONCLAD. Upgrades: 1 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.ARMAMENTS. Upgrades: 1 Enchantment:  Props:  Floor: 14
+		Serialized card: SerializableCard CARD.BLOODLETTING. Upgrades: 0 Enchantment:  Props:  Floor: 6
+		Serialized card: SerializableCard CARD.STRIKE_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+	Pile Discard
+	Pile Exhaust
+		Serialized card: SerializableCard CARD.ASCENDERS_BANE. Upgrades: 0 Enchantment:  Props:  Floor: 1
+			Keywords: Ethereal,Unplayable,Eternal
+	Pile Play
+	Potion POTION.FLEX_POTION
+	Potion POTION.FAIRY_IN_A_BOTTLE
+	Potion POTION.POWER_POTION
+	Potion POTION.WEAK_POTION
+	Relic RELIC.BURNING_BLOOD Props:  Floor added: 1
+	Relic RELIC.PRECARIOUS_SHEARS Props:  Floor added: 1
+	Relic RELIC.FROZEN_EGG Props:  Floor added: 7
+	Relic RELIC.MOLTEN_EGG Props:  Floor added: 7
+	Relic RELIC.TOXIC_EGG Props:  Floor added: 7
+	Relic RELIC.ICE_CREAM Props:  Floor added: 7
+	Relic RELIC.POTION_BELT Props:  Floor added: 7
+	Relic RELIC.MUMMIFIED_HAND Props:  Floor added: 9
+	Relic RELIC.AKABEKO Props:  Floor added: 10
+	Relic RELIC.BRIMSTONE Props:  Floor added: 11
+	Relic RELIC.REGAL_PILLOW Props:  Floor added: 11
+	Relic RELIC.GAME_PIECE Props:  Floor added: 11
+	Relic RELIC.CENTENNIAL_PUZZLE Props:  Floor added: 13
+Player RNG seed: 3814926937
+	RNG counter Transformations: 0
+Player relic grab bag:
+	Rarity Common: FESTIVE_POPPER,ODDLY_SMOOTH_STONE,RED_SKULL,ANCHOR,LANTERN,WHETSTONE,AMETHYST_AUBERGINE,JUZU_BRACELET,HAPPY_FLOWER,MEAL_TICKET,RED_MASK,BAG_OF_MARBLES,GORGET,WAR_PAINT,VAJRA,BOOK_OF_FIVE_RINGS,STRAWBERRY,PENDULUM,BLOOD_VIAL,BRONZE_SCALES,BAG_OF_PREPARATION,STRIKE_DUMMY
+	Rarity Uncommon: GREMLIN_HORN,LUCKY_FYSH,PETRIFIED_TOAD,JOSS_PAPER,CANDELABRA,PEN_NIB,VAMBRACE,LASTING_CANDY,TINY_MAILBOX,KUSARIGAMA,TUNING_FORK,LETTER_OPENER,MINIATURE_CANNON,HORN_CLEAT,PEAR,BOWLER_HAT,ORICHALCUM,RIPPLE_BASIN,ETERNAL_FEATHER,PAPER_PHROG,MERCURY_HOURGLASS,REPTILE_TRINKET,SPARKLING_ROUGE,PLANISPHERE,ORNAMENTAL_FAN,SELF_FORMING_CLAY,PERMAFROST,PARRYING_SHIELD,NUNCHAKU,PANTOGRAPH,STONE_CRACKER
+	Rarity Rare: BELLOWS,CHANDELIER,MEAT_ON_THE_BONE,SHOVEL,STONE_CALENDAR,OLD_COIN,UNCEASING_TOP,GAMBLING_CHIP,CAPTAINS_WHEEL,UNSETTLING_LAMP,GIRYA,CHARONS_ASHES,ART_OF_WAR,WHITE_STAR,MANGO,RAINBOW_RING,VEXING_PUZZLEBOX,TUNGSTEN_ROD,KUNAI,WHITE_BEAST_STATUE,THE_COURIER,RUINED_HELMET,STURDY_CLAMP,CLOAK_CLASP,DEMON_TONGUE,BEATING_REMNANT,INTIMIDATING_HELMET,SHURIKEN,RAZOR_TOOTH,POCKETWATCH,PRAYER_WHEEL,LIZARD_TAIL
+	Rarity Shop: DOLLYS_MIRROR,BURNING_STICKS,DINGY_RUG,BREAD,SCREAMING_FLAGON,GHOST_SEED,THE_ABACUS,TOOLBOX,MYSTIC_LIGHTER,DRAGON_FRUIT,BELT_BUCKLE,CHEMICAL_X,MINIATURE_TENT,GNARLED_HAMMER,MEMBERSHIP_CARD,CAULDRON,KIFUDA,ORRERY,SLING_OF_COURAGE,PUNCH_DAGGER,RINGING_TRIANGLE,ROYAL_STAMP,LEES_WAFFLE,LAVA_LAMP,WING_CHARM
+Player with ID: 76561199728860466 Character: CHARACTER.IRONCLAD
+	Turn: 2 Phase: Play
+	Energy: 0 Stars: 0 Max Potions: 4 Gold: 9097
+	Pile Count: 5 Potion Count: 4 Relic Count: 13 Orb Count: 0
+	Pile Hand
+		Serialized card: SerializableCard CARD.DEFEND_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.BLOODLETTING. Upgrades: 1 Enchantment:  Props:  Floor: 11
+		Serialized card: SerializableCard CARD.DEFEND_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.VICIOUS. Upgrades: 1 Enchantment:  Props:  Floor: 11
+		Serialized card: SerializableCard CARD.FLAME_BARRIER. Upgrades: 1 Enchantment:  Props:  Floor: 13
+		Serialized card: SerializableCard CARD.RUPTURE. Upgrades: 1 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.STRIKE_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.ASCENDERS_BANE. Upgrades: 0 Enchantment:  Props:  Floor: 1
+			Keywords: Ethereal,Unplayable,Eternal
+		Serialized card: SerializableCard CARD.MOLTEN_FIST. Upgrades: 0 Enchantment:  Props:  Floor: 5
+			Keywords: Exhaust
+	Pile Draw
+		Serialized card: SerializableCard CARD.BLUDGEON. Upgrades: 1 Enchantment:  Props:  Floor: 11
+		Serialized card: SerializableCard CARD.PERFECTED_STRIKE. Upgrades: 1 Enchantment:  Props:  Floor: 3
+		Serialized card: SerializableCard CARD.HAVOC. Upgrades: 1 Enchantment:  Props:  Floor: 1
+			Energy Cost: 0
+	Pile Discard
+		Serialized card: SerializableCard CARD.UNRELENTING. Upgrades: 1 Enchantment:  Props:  Floor: 10
+		Serialized card: SerializableCard CARD.UPPERCUT. Upgrades: 1 Enchantment:  Props:  Floor: 14
+		Serialized card: SerializableCard CARD.DEFEND_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.IMPERVIOUS. Upgrades: 0 Enchantment:  Props:  Floor: 6
+			Keywords: Exhaust
+		Serialized card: SerializableCard CARD.BASH. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.STRIKE_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+		Serialized card: SerializableCard CARD.BLOODLETTING. Upgrades: 0 Enchantment:  Props:  Floor: 2
+		Serialized card: SerializableCard CARD.THUNDERCLAP. Upgrades: 0 Enchantment:  Props:  Floor: 
+		Serialized card: SerializableCard CARD.STRIKE_IRONCLAD. Upgrades: 0 Enchantment:  Props:  Floor: 1
+	Pile Exhaust
+		Serialized card: SerializableCard CARD.SHOCKWAVE. Upgrades: 0 Enchantment:  Props:  Floor: 
+			Keywords: Exhaust
+		Serialized card: SerializableCard CARD.INFERNAL_BLADE. Upgrades: 1 Enchantment:  Props:  Floor: 11
+			Keywords: Exhaust
+			Energy Cost: 0
+	Pile Play
+		Serialized card: SerializableCard CARD.WHIRLWIND. Upgrades: 1 Enchantment:  Props:  Floor: 7
+	Potion POTION.TOUCH_OF_INSANITY
+	Potion POTION.POTION_OF_BINDING
+	Potion POTION.ENERGY_POTION
+	Potion POTION.WEAK_POTION
+	Relic RELIC.BURNING_BLOOD Props:  Floor added: 1
+	Relic RELIC.LEAFY_POULTICE Props:  Floor added: 1
+	Relic RELIC.FROZEN_EGG Props:  Floor added: 7
+	Relic RELIC.MOLTEN_EGG Props:  Floor added: 7
+	Relic RELIC.TOXIC_EGG Props:  Floor added: 7
+	Relic RELIC.ICE_CREAM Props:  Floor added: 7
+	Relic RELIC.POTION_BELT Props:  Floor added: 7
+	Relic RELIC.VENERABLE_TEA_SET Props: GainEnergyInNextCombat=False Floor added: 9
+	Relic RELIC.BOOK_OF_FIVE_RINGS Props: CardsAdded=7 Floor added: 10
+	Relic RELIC.TOOLBOX Props:  Floor added: 11
+	Relic RELIC.HAPPY_FLOWER Props: TurnsSeen=0 Floor added: 11
+	Relic RELIC.BAG_OF_PREPARATION Props:  Floor added: 11
+	Relic RELIC.PLANISPHERE Props:  Floor added: 13
+Player RNG seed: 3814926938
+	RNG counter Transformations: 2
+Player relic grab bag:
+	Rarity Common: RED_SKULL,JUZU_BRACELET,REGAL_PILLOW,MEAL_TICKET,PENDULUM,STRAWBERRY,BAG_OF_MARBLES,FESTIVE_POPPER,AMETHYST_AUBERGINE,ANCHOR,BRONZE_SCALES,ODDLY_SMOOTH_STONE,RED_MASK,WHETSTONE,BLOOD_VIAL,WAR_PAINT,CENTENNIAL_PUZZLE,STRIKE_DUMMY,VAJRA,GORGET,LANTERN
+	Rarity Uncommon: VAMBRACE,RIPPLE_BASIN,MERCURY_HOURGLASS,SELF_FORMING_CLAY,HORN_CLEAT,JOSS_PAPER,MINIATURE_CANNON,PERMAFROST,CANDELABRA,ETERNAL_FEATHER,PARRYING_SHIELD,REPTILE_TRINKET,PANTOGRAPH,SPARKLING_ROUGE,STONE_CRACKER,LETTER_OPENER,ORNAMENTAL_FAN,LASTING_CANDY,TUNING_FORK,PEAR,PETRIFIED_TOAD,LUCKY_FYSH,GREMLIN_HORN,AKABEKO,NUNCHAKU,BOWLER_HAT,PAPER_PHROG,ORICHALCUM,KUSARIGAMA,PEN_NIB,TINY_MAILBOX
+	Rarity Rare: POCKETWATCH,CLOAK_CLASP,BELLOWS,WHITE_STAR,STURDY_CLAMP,THE_COURIER,SHOVEL,UNCEASING_TOP,GAMBLING_CHIP,LIZARD_TAIL,CAPTAINS_WHEEL,RAZOR_TOOTH,CHANDELIER,SHURIKEN,STONE_CALENDAR,DEMON_TONGUE,PRAYER_WHEEL,TUNGSTEN_ROD,MANGO,CHARONS_ASHES,MEAT_ON_THE_BONE,VEXING_PUZZLEBOX,GAME_PIECE,UNSETTLING_LAMP,RAINBOW_RING,INTIMIDATING_HELMET,GIRYA,OLD_COIN,RUINED_HELMET,WHITE_BEAST_STATUE,ART_OF_WAR,BEATING_REMNANT,KUNAI
+	Rarity Shop: ORRERY,ROYAL_STAMP,SCREAMING_FLAGON,KIFUDA,PUNCH_DAGGER,BELT_BUCKLE,LEES_WAFFLE,GNARLED_HAMMER,LAVA_LAMP,DRAGON_FRUIT,WING_CHARM,DOLLYS_MIRROR,BURNING_STICKS,SLING_OF_COURAGE,THE_ABACUS,BREAD,RINGING_TRIANGLE,CAULDRON,DINGY_RUG,MYSTIC_LIGHTER,MINIATURE_TENT,CHEMICAL_X,GHOST_SEED,BRIMSTONE,MEMBERSHIP_CARD
+RNG global seed: 82621QGV9S
+	RNG counter UpFront: 532
+	RNG counter Shuffle: 310
+	RNG counter UnknownMapPoint: 1
+	RNG counter CombatCardGeneration: 276
+	RNG counter CombatPotionGeneration: 0
+	RNG counter CombatCardSelection: 7
+	RNG counter CombatEnergyCosts: 0
+	RNG counter CombatTargets: 26
+	RNG counter MonsterAi: 4
+	RNG counter Niche: 15
+	RNG counter CombatOrbs: 0
+	RNG counter TreasureRoomRelics: 2
+

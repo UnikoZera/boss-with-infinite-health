@@ -27,6 +27,7 @@ internal static class BossCombatState
             _pendingDeath = false;
             _protectedUntilBoundary = false;
         }
+        BossAuthority.Begin(_enabled);
         BossToggleButton.RefreshAll();
     }
 
@@ -41,6 +42,7 @@ internal static class BossCombatState
             _pendingDeath = false;
             _protectedUntilBoundary = false;
         }
+        BossAuthority.End();
         BossToggleButton.RefreshAll();
     }
 
@@ -59,6 +61,19 @@ internal static class BossCombatState
         }
         BossToggleButton.RefreshAll();
         return true;
+    }
+
+    public static void SetSynchronizedEnabled(bool value)
+    {
+        lock (Sync)
+        {
+            if (!IsBossCombat) return;
+            _enabled = value;
+            if (!value && _combat is not null &&
+                _combat.Enemies.Any(e => IsProtectedEnemy(e) && e.CurrentHp <= 0))
+                _protectedUntilBoundary = true;
+        }
+        BossToggleButton.RefreshAll();
     }
 
     public static bool ShouldSuppressDeath(Creature creature)
