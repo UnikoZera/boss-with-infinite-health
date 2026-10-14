@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>BossSurvival</AssemblyName>
+    <RootNamespace>BossSurvival</RootNamespace>
+    <LangVersion>12.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <OutputPath>bin\Release\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="inspect/**" />
+    <EmbeddedResource Remove="inspect/**" />
+    <None Remove="inspect/**" />
+    <Reference Include="sts2" HintPath="F:\Steam\steamapps\common\Slay the Spire 2\data_sts2_windows_x86_64\sts2.dll" Private="false" />
+    <Reference Include="GodotSharp" HintPath="F:\Steam\steamapps\common\Slay the Spire 2\data_sts2_windows_x86_64\GodotSharp.dll" Private="false" />
+    <Reference Include="0Harmony" HintPath="F:\Steam\steamapps\common\Slay the Spire 2\data_sts2_windows_x86_64\0Harmony.dll" Private="false" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,12 @@
+{
+  "id": "BossSurvival",
+  "name": "Boss Survival Switch",
+  "author": "Local Mod",
+  "description": "Adds a host-controlled boss survival switch. Bosses can keep acting below zero HP.",
+  "version": "0.1.0",
+  "min_game_version": "0.107.1",
+  "has_dll": true,
+  "has_pck": false,
+  "affects_gameplay": true,
+  "dependencies": []
+}
