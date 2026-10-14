@@ -15,8 +15,8 @@ This repository contains a DLL mod for Slay the Spire 2 `v0.107.1`.
   Test Subject's SetMaxHp/Heal revival no longer receives negative HP.
 - The state is reset at combat start/end.
 - Hold the left mouse button and drag the switch to move it. A drag does not
-  toggle survival. Position stays within the viewport and is remembered for the
-  current game session.
+  toggle survival. Position stays within the viewport and is saved in the mod
+  configuration for future game sessions.
 - `affects_gameplay` is true, so every multiplayer player must install the same
   mod. The control is host-only.
 
@@ -38,10 +38,12 @@ The existing configuration is preserved in `user://mod_configs/boss-with-infinit
 Negative HP is still shown numerically for bosses and their minions. For primary
 bosses only, while the switch is ON and HP is negative, the original health-bar
 foreground is reused with a yellow tint, retaining its native texture and layer.
-Extra damage fills the first yellow bar; completed bars overlap at full width. The
-counter at the right reads **×N**, where N = floor(-HP / original maximum HP).
-For an original maximum of 300: -299 has no completed layer, -300 shows ×1,
-and -600 shows ×2. The initial red bar is not included in this extra-bar count.
+Each extra yellow bar fills from left to right and resets to empty when another
+full original-health bar is completed. The counter at the right reads **×N**,
+where N = floor(-HP / original maximum HP). For an original maximum of 300:
+-299 has no completed layer, -300 shows ×1 with an empty yellow bar, -599 is
+almost full at ×1, and -600 shows ×2 with the yellow bar reset. The initial red
+bar is not included in this extra-bar count.
 Original maximum HP is captured when the creature's health display is attached;
 subsequent maximum-HP changes do not alter this denominator.
 The counter rolls toward its target with three strong bounce/scale pulses in

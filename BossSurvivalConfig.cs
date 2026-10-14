@@ -11,6 +11,27 @@ public sealed class BossSurvivalConfig
     public static BossSurvivalConfig Current { get; private set; } = new();
 
     public bool DefaultEnabled { get; set; }
+    public float? TogglePositionX { get; set; }
+    public float? TogglePositionY { get; set; }
+
+    public static Vector2 GetTogglePosition(Vector2 fallback)
+    {
+        var x = Current.TogglePositionX;
+        var y = Current.TogglePositionY;
+        return x.HasValue && y.HasValue && float.IsFinite(x.Value) && float.IsFinite(y.Value)
+            ? new Vector2(x.Value, y.Value)
+            : fallback;
+    }
+
+    public static void SaveTogglePosition(Vector2 position)
+    {
+        lock (Sync)
+        {
+            Current.TogglePositionX = position.X;
+            Current.TogglePositionY = position.Y;
+            Save();
+        }
+    }
 
     public static void Load()
     {

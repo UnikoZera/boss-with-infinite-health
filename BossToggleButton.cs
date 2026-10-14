@@ -15,6 +15,7 @@ internal static class BossToggleButton
 
     public static void Attach(NCombatRoom room)
     {
+        SavedPosition = BossSurvivalConfig.GetTogglePosition(new Vector2(34, 116));
         var layer = new CanvasLayer
         {
             Name = "BossSurvivalOverlay",
@@ -73,6 +74,7 @@ internal static class BossToggleButton
                     if (moved)
                     {
                         SavedPosition = panel.Position;
+                        BossSurvivalConfig.SaveTogglePosition(SavedPosition);
                         // Consume drag release before BaseButton treats it as a click.
                         button.SetPressedNoSignal(false);
                         button.AcceptEvent();

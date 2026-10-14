@@ -58,15 +58,15 @@ internal static class BossOverkillHealthBar
         }
 
         var maxHp = Baselines.GetValue(creature, c => new Baseline(c.MaxHp)).MaxHp;
-        var damage = -(long)creature.CurrentHp;
-        var count = damage / maxHp;
-        // Native NinePatchRect retains texture, frame, clipping and z-order.
-        // Extra damage fills the first yellow bar; completed bars overlap at full width.
+        var progress = OverkillBarProgressCalculator.Calculate(creature.CurrentHp, maxHp);
+        var count = progress.CompletedBars;
+        // Each completed bar increments the counter; the visible bar tracks only
+        // the damage remainder and starts empty at every threshold.
         if (ForegroundField.GetValue(bar) is Control foreground && WidthProperty.GetValue(bar) is float width)
         {
             foreground.Visible = true;
             foreground.SelfModulate = new Color("#f4cf42");
-            foreground.OffsetRight = Math.Max(12f, width * (float)Math.Min(1, damage / (double)maxHp)) - width;
+            foreground.OffsetRight = width * progress.CurrentBarFraction - width;
         }
 
         var visual = Visuals.GetValue(bar, Create);

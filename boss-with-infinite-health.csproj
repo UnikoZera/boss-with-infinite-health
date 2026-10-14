@@ -8,7 +8,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>outputs\</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
   <ItemGroup>
@@ -16,12 +16,14 @@
     <Compile Remove="inspect/**" />
     <Compile Remove="inspect2/**" />
     <Compile Remove="tmpinspect/**" />
+    <Compile Remove="tests/**" />
     <EmbeddedResource Remove="inspect/**" />
     <EmbeddedResource Remove="inspect2/**" />
     <EmbeddedResource Remove="tmpinspect/**" />
     <None Remove="inspect/**" />
     <None Remove="inspect2/**" />
     <None Remove="tmpinspect/**" />
+    <None Remove="tests/**" />
     <Reference Include="sts2" HintPath="F:\Steam\steamapps\common\Slay the Spire 2\data_sts2_windows_x86_64\sts2.dll" Private="false" />
     <Reference Include="GodotSharp" HintPath="F:\Steam\steamapps\common\Slay the Spire 2\data_sts2_windows_x86_64\GodotSharp.dll" Private="false" />
     <Reference Include="0Harmony" HintPath="F:\Steam\steamapps\common\Slay the Spire 2\data_sts2_windows_x86_64\0Harmony.dll" Private="false" />
