@@ -7,8 +7,9 @@ This repository contains a DLL mod for Slay the Spire 2 `v0.107.1`.
 - The button is visible only in encounters recognized as boss encounters.
 - It is off by default. While on, `Hook.ShouldDie` denies boss death, target
   selection and hit checks continue to allow the boss, and the health bar shows
-  its actual HP value, including negative values. The boss is exposed as alive to
-  combat win-state checks so the combat manager does not enter its ending state.
+  its actual HP value, including negative values. Combat remains in progress while
+  enabled, including during Doom/curse batch-death checks, so victory audio and
+  win-state processing cannot trigger before the switch is turned off.
 - Turning it off keeps negative HP until the current player-turn boundary.
   Immediately before the enemy-turn death batch, negative HP is normalized to
   zero so vanilla death and resurrection/phase-change logic can proceed safely.
@@ -35,16 +36,16 @@ The existing configuration is preserved in `user://mod_configs/boss-with-infinit
 }
 ```
 
-Negative HP is still shown numerically for bosses and their minions. For primary
-bosses only, while the switch is ON and HP is negative, the original health-bar
+Negative HP is still shown numerically for bosses and their minions. For bosses and
+their minions, while the switch is ON and HP is negative, the original health-bar
 foreground is reused with a yellow tint, retaining its native texture and layer.
 Each extra yellow bar fills from left to right and resets to empty when another
 full original-health bar is completed. The counter at the right reads **×N**,
-where N = floor(-HP / original maximum HP). For an original maximum of 300:
--299 has no completed layer, -300 shows ×1 with an empty yellow bar, -599 is
-almost full at ×1, and -600 shows ×2 with the yellow bar reset. The initial red
-bar is not included in this extra-bar count.
-Original maximum HP is captured when the creature's health display is attached;
+where N = floor(-HP / original maximum HP) for that creature. For an original
+maximum of 300: -299 has no completed layer, -300 shows ×1 with an empty yellow
+bar, -599 is almost full at ×1, and -600 shows ×2 with the yellow bar reset. The
+initial red bar is not included in this extra-bar count.
+Original maximum HP is captured when that creature's health display is attached;
 subsequent maximum-HP changes do not alter this denominator.
 The counter rolls toward its target with three strong bounce/scale pulses in
 0.85 seconds, regardless of the number of bars gained. New hits replace the

@@ -120,8 +120,9 @@ internal static class BossCombatState
         {
             if (!ReferenceEquals(_combat, combat) || !_bossCombat)
                 return false;
-            if (_pendingDeath) return true;
-            return (_enabled || _protectedUntilBoundary) &&
+            if (_enabled || _pendingDeath)
+                return true;
+            return _protectedUntilBoundary &&
                 combat.Enemies.Any(e => IsProtectedEnemy(e) && e.CurrentHp <= 0);
         }
     }
@@ -131,14 +132,8 @@ internal static class BossCombatState
         lock (Sync)
         {
             if (!ReferenceEquals(_combat, combat) || !_bossCombat) return false;
-            // Keep the combat open while the normal death pipeline is removing
-            // the whole dead-enemy batch. The boundary caller checks victory
-            // immediately after this task completes.
-            if (_pendingDeath) return true;
-            if (_protectedUntilBoundary && combat.Enemies.Any(e => IsProtectedEnemy(e) && e.CurrentHp <= 0))
-                return true;
-            if (!_enabled) return false;
-            return combat.Enemies.Any(e => IsProtectedEnemy(e) && e.CurrentHp <= 0);
+            return _enabled || _pendingDeath ||
+                (_protectedUntilBoundary && combat.Enemies.Any(e => IsProtectedEnemy(e) && e.CurrentHp <= 0));
         }
     }
 

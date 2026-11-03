@@ -49,7 +49,7 @@ internal static class BossOverkillHealthBar
             return;
         var eligible = BossCombatState.Enabled && BossCombatState.IsBossCombat &&
             ReferenceEquals(creature.CombatState, BossCombatState.Combat) &&
-            creature.IsMonster && creature.IsPrimaryEnemy && creature.CurrentHp < 0;
+            BossCombatState.IsProtectedEnemy(creature) && creature.CurrentHp < 0;
         if (!eligible)
         {
             if (Visuals.TryGetValue(bar, out var old))
