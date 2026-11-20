@@ -14,8 +14,16 @@ public static class ModEntry
     {
         BossSurvivalConfig.Load();
         BaseLib.Config.ModConfigRegistry.Register(ModId, new BossSettingsMenu());
-        Log.Info($"[{ModId}] Applying combat patches for STS2 v0.107.1.");
-        new Harmony(ModId).PatchAll(Assembly.GetExecutingAssembly());
-        Log.Info($"[{ModId}] loaded for STS2 v0.107.1.");
+        Log.Info($"[{ModId}] Applying combat patches.");
+        try
+        {
+            new Harmony(ModId).PatchAll(Assembly.GetExecutingAssembly());
+        }
+        catch (Exception exception)
+        {
+            Log.Error($"[{ModId}] Harmony patch initialization failed: {exception}");
+            throw;
+        }
+        Log.Info($"[{ModId}] loaded.");
     }
 }

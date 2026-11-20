@@ -168,22 +168,39 @@ internal static class BossHealthBarTextHook
     }
 }
 
-[HarmonyPatch(typeof(CombatManager), nameof(CombatManager.IsEnding), MethodType.Getter)]
-internal static class BossCombatEndingStateHook
+
+[HarmonyPatch]
+internal static class BossWinConditionHook
 {
-    private static void Postfix(CombatState ____state, ref bool __result)
+    private static System.Reflection.MethodBase TargetMethod() =>
+        AccessTools.GetDeclaredMethods(typeof(CombatManager))
+            .Single(method => method.Name == nameof(CombatManager.CheckWinCondition) &&
+                method.GetParameters().Length == 0);
+
+    private static bool Prefix(ref Task<bool> __result)
     {
-        if (BossCombatState.ShouldKeepCombatAlive(____state))
-            __result = false;
+        if (!BossCombatState.ShouldPreventWinCondition())
+            return true;
+
+        __result = Task.FromResult(false);
+        return false;
     }
 }
 
-[HarmonyPatch(typeof(CombatManager), nameof(CombatManager.IsOverOrEnding), MethodType.Getter)]
-internal static class BossCombatOverStateHook
+[HarmonyPatch]
+internal static class BossTurnStateWinConditionHook
 {
-    private static void Postfix(CombatState ____state, ref bool __result)
+    private static System.Reflection.MethodBase TargetMethod() =>
+        AccessTools.GetDeclaredMethods(typeof(CombatManager))
+            .Single(method => method.Name == nameof(CombatManager.CheckWinCondition) &&
+                method.GetParameters().Length == 1);
+
+    private static bool Prefix(ref Task<bool> __result)
     {
-        if (BossCombatState.ShouldKeepCombatAlive(____state))
-            __result = false;
+        if (!BossCombatState.ShouldPreventWinCondition())
+            return true;
+
+        __result = Task.FromResult(false);
+        return false;
     }
 }

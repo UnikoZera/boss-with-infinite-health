@@ -137,6 +137,19 @@ internal static class BossCombatState
         }
     }
 
+    public static bool ShouldPreventWinCondition()
+    {
+        lock (Sync)
+        {
+            if (!_bossCombat || _combat is null)
+                return false;
+
+            return _enabled || _pendingDeath ||
+                (_protectedUntilBoundary && _combat.Enemies.Any(e =>
+                    IsProtectedEnemy(e) && e.CurrentHp <= 0));
+        }
+    }
+
     public static async Task EvaluateAtEnemyTurnBoundaryAsync()
     {
         Creature[] deadEnemies;

@@ -1,6 +1,7 @@
 # boss-with-infinite-health
 
-This repository contains a DLL mod for Slay the Spire 2 `v0.107.1`.
+This repository contains a DLL mod for Slay the Spire 2. Release `0.1.2`
+has been checked against game version `v0.113.1` with BaseLib `3.4.8`.
 
 ## Behavior
 
@@ -59,8 +60,10 @@ These visuals do not intercept input or change combat logic.
 
 ```powershell
 dotnet build .\boss-with-infinite-health.csproj -c Release
-Copy-Item .\bin\Release\boss-with-infinite-health.dll 'F:\Steam\steamapps\common\Slay the Spire 2\mods\boss-with-infinite-health\'
-Copy-Item .\boss-with-infinite-health.json 'F:\Steam\steamapps\common\Slay the Spire 2\mods\boss-with-infinite-health\'
+$destination = 'F:\Steam\steamapps\common\Slay the Spire 2\mods\boss-with-infinite-health'
+New-Item -ItemType Directory -Force $destination | Out-Null
+Copy-Item .\outputs\boss-with-infinite-health.dll $destination -Force
+Copy-Item .\ModUploader-win-x64\BossSurvival\content\boss-with-infinite-health.json $destination -Force
 ```
 
 The game must have mod loading enabled. The host-only rule is enforced locally.
@@ -68,3 +71,21 @@ STS2 v0.107.1 does expose `SendMessage<T>`/`RegisterMessageHandler<T>`, but its
 message subtype table is internal and closed to third-party message types. This
 build therefore does not claim cross-client state replication: install the mod
 on every player, and use it only when all clients are running the same setting.
+
+## Release 0.1.2
+
+- Boss minions use their own original maximum HP for yellow overkill bars and counters.
+- Removed CombatManager getter patches that depended on the obsolete `_state` field.
+- Added guards for both current `CheckWinCondition` overloads.
+- Updated Damage target lookup for the current game API. The Damage transpiler
+  leaves IL unchanged when the selected method has no direct `IsDead` calls.
+- Harmony initialization failures are logged with their exception stack.
+
+Validation: Release build succeeded and an actual game launch logged
+`[boss-with-infinite-health] loaded.` and completed loading the main menu.
+This confirms startup initialization; it does not establish full combat coverage.
+
+Workshop upload files live in `ModUploader-win-x64/BossSurvival/content/`.
+The uploader does not build the mod. After building, replace that directory's DLL,
+PDB and deps.json from `outputs/`, preserving its release manifest.
+

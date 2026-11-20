@@ -169,10 +169,15 @@ internal static class BossDamageTargetHook
 {
     private static MethodBase TargetMethod()
     {
-        var damageMethod = AccessTools.Method(typeof(CreatureCmd), nameof(CreatureCmd.Damage),
-            [typeof(PlayerChoiceContext), typeof(IEnumerable<Creature>), typeof(decimal),
-             typeof(ValueProp), typeof(Creature), typeof(CardModel)]) ??
-            throw new MissingMethodException(typeof(CreatureCmd).FullName, "Damage(IEnumerable<Creature>, decimal)");
+        var damageMethod = typeof(CreatureCmd).GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static)
+            .SingleOrDefault(method =>
+            {
+                var parameters = method.GetParameters();
+                return method.Name == nameof(CreatureCmd.Damage) && parameters.Length == 7 &&
+                    parameters[2].ParameterType == typeof(decimal) &&
+                    parameters[3].ParameterType == typeof(ValueProp);
+            }) ??
+            throw new MissingMethodException(typeof(CreatureCmd).FullName, "Damage batch overload");
 
         var stateMachine = damageMethod.GetCustomAttribute<AsyncStateMachineAttribute>()?.StateMachineType;
         return stateMachine?.GetMethod("MoveNext", BindingFlags.Instance | BindingFlags.NonPublic) ?? damageMethod;
@@ -197,7 +202,10 @@ internal static class BossDamageTargetHook
         }
 
         if (replacedChecks == 0)
-            throw new InvalidOperationException("CreatureCmd.Damage contains no IsDead checks to protect.");
+        {
+            Log.Info($"[{ModEntry.ModId}] CreatureCmd.Damage has no direct IsDead checks; leaving its IL unchanged.");
+            return patchedInstructions;
+        }
 
         Log.Info($"[{ModEntry.ModId}] protected {replacedChecks} IsDead check(s) in CreatureCmd.Damage.");
         return patchedInstructions;

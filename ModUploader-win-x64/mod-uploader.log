@@ -11,27 +11,17 @@ Found 1 dependencies.
 Uploading 'BOSS 无限生命' to the steam workshop with item ID 3819737736...
 Status: k_EItemUpdateStatusPreparingContent
 Status: k_EItemUpdateStatusPreparingContent
-Status: k_EItemUpdateStatusPreparingContent
 Status: k_EItemUpdateStatusUploadingContent
 Status: k_EItemUpdateStatusUploadingContent
 Status: k_EItemUpdateStatusUploadingContent
 Status: k_EItemUpdateStatusUploadingContent
-Status: k_EItemUpdateStatusUploadingPreviewFile
-Status: k_EItemUpdateStatusUploadingPreviewFile
-Status: k_EItemUpdateStatusUploadingPreviewFile
-Status: k_EItemUpdateStatusUploadingPreviewFile
-Status: k_EItemUpdateStatusUploadingPreviewFile
-Status: k_EItemUpdateStatusUploadingPreviewFile
-Status: k_EItemUpdateStatusUploadingPreviewFile
-Status: k_EItemUpdateStatusUploadingPreviewFile
-Status: k_EItemUpdateStatusUploadingPreviewFile
-Status: k_EItemUpdateStatusUploadingPreviewFile
-Status: k_EItemUpdateStatusUploadingPreviewFile
-Status: k_EItemUpdateStatusUploadingPreviewFile
-Status: k_EItemUpdateStatusUploadingPreviewFile
-Status: k_EItemUpdateStatusUploadingPreviewFile
-Status: k_EItemUpdateStatusUploadingPreviewFile
-Status: k_EItemUpdateStatusUploadingPreviewFile
+Status: k_EItemUpdateStatusUploadingContent
+Status: k_EItemUpdateStatusUploadingContent
+Status: k_EItemUpdateStatusUploadingContent
+Status: k_EItemUpdateStatusUploadingContent, bytes processed: 0/66094 (0.00%)
+Status: k_EItemUpdateStatusUploadingContent, bytes processed: 1390/66094 (2.10%)
+Status: k_EItemUpdateStatusUploadingContent, bytes processed: 22574/66094 (34.15%)
+Status: k_EItemUpdateStatusUploadingContent, bytes processed: 66094/66094 (100.00%)
 Status: k_EItemUpdateStatusUploadingPreviewFile
 Status: k_EItemUpdateStatusCommittingChanges
 Status: k_EItemUpdateStatusInvalid
